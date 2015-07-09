@@ -4,12 +4,12 @@ recipes:
 - sprout-base
 - sprout-base::bash_it
 - sprout-base::homebrew
+- homebrew::install_taps
 - sprout-homebrew
 
 # settings
 - sprout-osx-settings
 - sprout-osx-settings::dock_preferences
-- sprout-terminal
 - sprout-ssh::known_hosts_github
 
 # development (general)
@@ -20,7 +20,6 @@ recipes:
 - sprout-git::git_scripts
 
 # development (rails)
-- sprout-rbenv
 - sprout-ruby
 - sprout-mysql
 - sprout-postgresql
@@ -28,70 +27,171 @@ recipes:
 # apps
 - sprout-osx-apps::iterm2
 - sprout-osx-apps::flycut
-- sprout-osx-apps::shiftit
 
 # apps (editors)
 - sprout-osx-apps::textmate_preferences
 - sprout-osx-apps::macvim
-- sprout-rubymine
+- sprout-jetbrains-editors::rubymine
+
+# runtime-specific
+- sprout-osx-settings::ntp
+- sprout-osx-apps::vagrant_plugins
+
+- sprout-chruby
+
+#- cf-vim
+#- cf-runtime
 
 node_attributes:
   sprout:
     git:
-      domain: pivotallabs.com
+      domain: pivotal.io
       authors:
-        - initials: ah
-          name: Abhijit Hiremagalur
-          username: abhi
-        - initials: bc
-          name: Brian Cunnie
-          username: cunnie
-        - initials: jrhb
-          name: Jonathan Barnes
-        - initials: lw
-          name: Luke Winikates
-          username: lwinikates
+        - initials: dw
+          name: Dan Wendorf
+          username: dwendorf
+        - initials: gc
+          name: Greg Cobb
+          username: gcobb
+        - initials: jp
+          name: Jeff Pak
+          email: jeffrey.pak@emc.com
+        - initials: jraq
+          name: James Quintana
+          username: jquintana
+        - initials: ld
+          name: Liz Dahlstrom
+          username: edahlstrom
+        - initials: rm
+          name: Raina Masand
+          username: rmasand
+        - initials: uu
+          name: Utako Ueda
+          username: uueda
+        - initials: zr
+          name: Zach Robinson
+          username: zrobinson
       projects:
         -
-          name: sprout-wrap
-          url: https://github.com/pivotal-sprout/sprout-wrap.git
+          name: api-docs
+          url: git@github.com:cloudfoundry/api-docs.git
+        -
+          name: bosh-lite
+          url: git@github.com:cloudfoundry/bosh-lite.git
+        -
+          name: canibump
+          url: git@github.com:pivotal-cf-experimental/canibump.git
+        -
+          name: cf-release
+          url: git@github.com:cloudfoundry/cf-release.git
+        -
+          name: docs-services
+          url: git@github.com:cloudfoundry/docs-services.git
+        -
+          name: sprout-capi
+          url: git@github.com:pivotal-cf-experimental/sprout-capi.git
     terminal:
       default_profile: 'Pro'
     settings:
       clock_format: EEE MMM d  h:mm:ss a
     dock_preferences:
-      orientation: 'left'
+      orientation: 'bottom'
       auto_hide: true
       clear_apps: true
       tile_size: 35
       magnification: false
     homebrew:
       formulae:
+        - ack
+        - awscli
         - ctags-exuberant
-        - ag
-        - chromedriver
-        - imagemagick
+        - cloudfoundry-cli
+        - direnv
+        - fasd
+        - jq
+        - libxml2 # Used by Nokogiri
         - node
-        # - pstree # Skip until download url is fixed: https://github.com/Homebrew/homebrew/pull/35135
+        - pstree
         - qt
+        - s3cmd
         - ssh-copy-id
+        - spiff # This will require two runs to succeed until https://github.com/xoebus/homebrew-cloudfoundry/issues/5 is fixed
+        - tig
+        - the_silver_searcher
         - tmux
         - tree
         - watch
         - wget
-        - rbenv-binstubs
-        - rbenv-gem-rehash
       casks:
-        - ccmenu
-        - firefox
         - gitx-rowanj
         - github
         - google-chrome
-        - google-drive
-        - google-hangouts
-        - skype
-        - textmate
+        - iterm2-nightly
+        - java
+        - karabiner
+        - menumeters
+        - mou
+        - sequel-pro
+        - sourcetree
+        - spectacle
         - vagrant
         - virtualbox
-        - xquartz
         - xscope
+    chruby:
+      default_ruby: '2.1.6'
+      rubies:
+        ruby:
+          - '2.1.6'
+
+  bosh:
+    directors:
+      - name: lite
+        url: https://192.168.50.4
+      - name: tabasco
+        url: https://bosh.tabasco.cf-app.com
+      - name: a1
+        url: https://bosh.a1.cf-app.com
+      - name: runtime1
+        url: https://micro.runtime1.cf-app.com
+      - name: runtime2
+        url: https://micro.runtime2.cf-app.com
+      - name: runtime-bb-2
+        url: https://bosh.runtime-bb-2.cf-app.com
+      - name: runtime-bb-1
+        url: https://bosh.runtime-bb-1.cf-app.com
+      - name: cat
+        url: https://bosh.cat.wild.cf-app.com
+      - name: mouse
+        url: https://bosh.mouse.wild.cf-app.com
+      - name: runtime-ci
+        url: https://bosh.runtime.ci.cf-app.com
+      - name: minimal
+        url: https://54.165.111.247
+
+  versions:
+    bash_it: HEAD
+
+  bash_it:
+    enabled_plugins:
+      aliases:
+        - general
+        - bundler
+        - git
+      completion:
+        - defaults
+        - git
+        - ssh
+      plugins:
+        - ssh
+        - git
+        - fzf
+        - fasd
+    #custom_plugins:
+    #  cf-runtime:
+    #    - bash_it/custom/runtime-aliases.bash
+    #    - bash_it/custom/runtime-env.bash
+  homebrew:
+    taps:
+      - pivotal/tap
+      - caskroom/versions
+      - xoebus/homebrew-cloudfoundry
