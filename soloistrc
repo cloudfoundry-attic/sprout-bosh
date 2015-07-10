@@ -104,7 +104,6 @@ node_attributes:
       formulae:
         - ack
         - awscli
-        - ctags-exuberant
         - cloudfoundry-cli
         - direnv
         - fasd
@@ -120,6 +119,8 @@ node_attributes:
         - the_silver_searcher
         - tmux
         - tree
+        - name: universal-ctags
+          head: true
         - watch
         - wget
       casks:
@@ -195,3 +196,4 @@ node_attributes:
       - pivotal/tap
       - caskroom/versions
       - xoebus/homebrew-cloudfoundry
+      - universal-ctags/universal-ctags
