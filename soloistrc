@@ -107,6 +107,8 @@ node_attributes:
         - cloudfoundry-cli
         - direnv
         - fasd
+        - name: fzf
+          head: true
         - jq
         - libxml2 # Used by Nokogiri
         - node
