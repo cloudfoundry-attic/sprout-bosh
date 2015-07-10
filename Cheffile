@@ -39,3 +39,5 @@ cookbook 'sprout-ssh',
   :github => 'pivotal-sprout/sprout-ssh'
 
 cookbook 'homebrew'
+
+cookbook 'capi', path: 'capi'

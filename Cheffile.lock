@@ -111,7 +111,15 @@ GIT
       sprout-base (>= 0.0.0)
       sprout-osx-settings (>= 0.0.0)
 
+PATH
+  remote: capi
+  specs:
+    capi (0.1.0)
+      sprout-base (>= 0.0.0)
+      sprout-git (>= 0.0.0)
+
 DEPENDENCIES
+  capi (>= 0)
   homebrew (>= 0)
   osx (>= 0)
   sprout-base (>= 0)

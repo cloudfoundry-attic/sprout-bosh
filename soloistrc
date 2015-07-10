@@ -40,7 +40,7 @@ recipes:
 - sprout-chruby
 
 #- cf-vim
-#- cf-runtime
+- capi
 
 node_attributes:
   sprout:
@@ -186,10 +186,10 @@ node_attributes:
         - git
         - fzf
         - fasd
-    #custom_plugins:
-    #  cf-runtime:
-    #    - bash_it/custom/runtime-aliases.bash
-    #    - bash_it/custom/runtime-env.bash
+    custom_plugins:
+      cf-runtime:
+        - bash_it/custom/runtime-aliases.bash
+        - bash_it/custom/runtime-env.bash
   homebrew:
     taps:
       - pivotal/tap
