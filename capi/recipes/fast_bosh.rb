@@ -19,7 +19,7 @@ cookbook_file "#{fast_bosh_path}/.ruby-version" do
 end
 
 execute "install bosh cli" do
-  command "bundle install"
+  command "BUNDLE_GEMFILE=#{File.join fast_bosh_path, 'Gemfile'} chruby-exec system -- bundle install"
   cwd fast_bosh_path
   user node['sprout']['user']
 end
