@@ -36,6 +36,7 @@ recipes:
 # runtime-specific
 - sprout-osx-settings::ntp
 - sprout-osx-apps::vagrant_plugins
+- sprout-osx-apps::go
 
 - sprout-chruby
 
