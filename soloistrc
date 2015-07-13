@@ -190,9 +190,9 @@ node_attributes:
         - fzf
         - fasd
     custom_plugins:
-      cf-runtime:
-        - bash_it/custom/runtime-aliases.bash
-        - bash_it/custom/runtime-env.bash
+      capi:
+        - bash_it/custom/capi-aliases.bash
+        - bash_it/custom/capi-env.bash
   homebrew:
     taps:
       - pivotal/tap
