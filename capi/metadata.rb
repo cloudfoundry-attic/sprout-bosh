@@ -8,4 +8,5 @@ version          '0.1.0'
 supports         'mac_os_x'
 
 depends          'sprout-base'
+depends          'sprout-chruby'
 depends          'sprout-git'
