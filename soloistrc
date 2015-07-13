@@ -40,7 +40,6 @@ recipes:
 
 - sprout-chruby
 
-#- cf-vim
 - capi
 
 node_attributes:
