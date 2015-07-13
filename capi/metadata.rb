@@ -9,4 +9,5 @@ supports         'mac_os_x'
 
 depends          'sprout-base'
 depends          'sprout-chruby'
+depends          'sprout-homebrew'
 depends          'sprout-git'
