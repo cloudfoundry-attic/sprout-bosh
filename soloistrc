@@ -46,6 +46,10 @@ node_attributes:
   sprout:
     git:
       domain: pivotal.io
+      aliases:
+        - ci duet-commit
+      global_config:
+        'url."git@github.com:".pushInsteadOf': 'https://github.com/'
       authors:
         - initials: dw
           name: Dan Wendorf
@@ -72,24 +76,12 @@ node_attributes:
           name: Zach Robinson
           username: zrobinson
       projects:
-        -
-          name: api-docs
-          url: git@github.com:cloudfoundry/api-docs.git
-        -
-          name: bosh-lite
-          url: git@github.com:cloudfoundry/bosh-lite.git
-        -
-          name: canibump
-          url: git@github.com:pivotal-cf-experimental/canibump.git
-        -
-          name: cf-release
-          url: git@github.com:cloudfoundry/cf-release.git
-        -
-          name: docs-services
-          url: git@github.com:cloudfoundry/docs-services.git
-        -
-          name: sprout-capi
-          url: git@github.com:pivotal-cf-experimental/sprout-capi.git
+        - url: https://github.com/cloudfoundry/api-docs
+        - url: https://github.com/cloudfoundry/bosh-lite
+        - url: https://github.com/pivotal-cf-experimental/canibump
+        - url: https://github.com/cloudfoundry/cf-release
+        - url: https://github.com/cloudfoundry/docs-services
+        - url: https://github.com/pivotal-cf-experimental/sprout-capi
     terminal:
       default_profile: 'Pro'
     settings:
