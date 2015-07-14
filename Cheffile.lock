@@ -32,7 +32,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-git
   ref: master
-  sha: f0eeca5b88aff2aaab05a3cc64795bef76198aae
+  sha: 2b74c5630fb96b60d36d363f94b52d2664edcdcc
   specs:
     sprout-git (0.1.1)
       homebrew (>= 0.0.0)
@@ -67,7 +67,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-osx-apps
   ref: master
-  sha: 3680e8b7a05989605c58f440e45304a4feea1bd0
+  sha: 92996213da21ede0c1ad7a7de498950db621bd93
   specs:
     sprout-osx-apps (0.1.0)
       dmg (>= 0.0.0)
@@ -116,7 +116,9 @@ PATH
   specs:
     capi (0.1.0)
       sprout-base (>= 0.0.0)
+      sprout-chruby (>= 0.0.0)
       sprout-git (>= 0.0.0)
+      sprout-homebrew (>= 0.0.0)
 
 DEPENDENCIES
   capi (>= 0)

@@ -16,8 +16,8 @@ recipes:
 - sprout-base::workspace_directory
 - sprout-git
 - sprout-git::default_editor
+- sprout-git::git_duet
 - sprout-git::projects
-- sprout-git::git_scripts
 
 # development (rails)
 - sprout-ruby
