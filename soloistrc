@@ -110,7 +110,6 @@ node_attributes:
         - name: fzf
           head: true
         - jq
-        - libxml2 # Used by Nokogiri
         - node
         - pstree
         - qt
