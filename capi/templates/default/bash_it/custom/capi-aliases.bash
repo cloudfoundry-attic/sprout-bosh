@@ -3,5 +3,5 @@ alias create-lite='bosh create release --force && bosh target 192.168.50.4 lite 
 alias cats='(cd ~/workspace/cf-release/src/acceptance-tests && CONFIG=$PWD/integration_config.json bin/test -nodes 4)'
 
 # Bosh-lite setup
-alias qnd-deploy='bosh create release --force && bosh upload release && bosh -n deploy'
+alias qnd-deploy='bosh create release --name cf --force && bosh upload release && bosh -n deploy'
 alias qnd-deploy-manifest='bosh-lite/make_manifest && qnd-deploy'
