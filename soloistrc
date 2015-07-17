@@ -87,6 +87,9 @@ node_attributes:
             - bosh upload stemcell https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent
         - url: https://github.com/pivotal-cf-experimental/canibump
         - url: https://github.com/cloudfoundry/cf-release
+          post_clone_commands:
+            - git checkout develop
+            - ./update
         - url: https://github.com/cloudfoundry/docs-services
         - url: https://github.com/pivotal-cf-experimental/sprout-capi
     terminal:
