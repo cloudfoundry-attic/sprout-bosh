@@ -91,7 +91,7 @@ node_attributes:
             - git checkout develop
             - ./update
         - url: https://github.com/cloudfoundry/docs-services
-        - url: https://github.com/pivotal-cf-experimental/sprout-capi
+        - url: https://github.com/cloudfoundry-incubator/sprout-capi
     terminal:
       default_profile: 'Pro'
     settings:
