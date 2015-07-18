@@ -82,9 +82,9 @@ node_attributes:
           post_clone_commands:
             - vagrant up
             - bin/add-route
-            - bosh target lite
-            - bosh login admin admin
-            - bosh upload stemcell https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent
+            - bash -l -c 'chruby-exec 2.1.6 -- bosh target lite'
+            - bash -l -c 'chruby-exec 2.1.6 -- bosh login admin admin'
+            - bash -l -c 'chruby-exec 2.1.6 -- bosh upload stemcell https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent'
         - url: https://github.com/pivotal-cf-experimental/canibump
         - url: https://github.com/cloudfoundry/cf-release
           post_clone_commands:
