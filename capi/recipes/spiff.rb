@@ -1,5 +1,5 @@
 node.default['spiff']['url'] = 'https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0.7/spiff_darwin_amd64.zip'
-node.default['spiff']['shasum'] = 'c9490a3daf362448058dd22e96c0809a1a04a9c6'
+node.default['spiff']['shasum'] = '482b77c522e5d8ac95cfe1b8e785f5d4fe9183f7d25122fa18d271cac6a3dbbe'
 
 unless File.exists?('/usr/local/bin/spiff')
   directory Chef::Config[:file_cache_path] do
