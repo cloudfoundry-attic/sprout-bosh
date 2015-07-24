@@ -1,0 +1,24 @@
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'cf-bosh', path: '.'
+
+cookbook 'cf-common', path: '..'
+cookbook 'cf-vim',    path: '..'
+
+cookbook 'osx',                      git: 'git://github.com/pivotal-sprout/osx.git'
+cookbook 'sprout-base',              git: 'git://github.com/pivotal-sprout/sprout-base.git'
+cookbook 'sprout-git',               git: 'git://github.com/pivotal-sprout/sprout-git.git'
+cookbook 'sprout-homebrew',          git: 'git://github.com/pivotal-sprout/sprout-homebrew.git'
+cookbook 'sprout-osx-apps',          git: 'git://github.com/pivotal-sprout/sprout-osx-apps.git'
+cookbook 'sprout-osx-settings',      git: 'git://github.com/pivotal-sprout/sprout-osx-settings.git'
+cookbook 'sprout-redis',             git: 'git://github.com/pivotal-sprout/sprout-redis.git'
+cookbook 'sprout-ruby',              git: 'git://github.com/pivotal-sprout/sprout-ruby.git'
+cookbook 'sprout-rubymine',          git: 'git://github.com/pivotal-sprout/sprout-rubymine.git'
+cookbook 'sprout-jetbrains-editors', git: 'git://github.com/pivotal-sprout/sprout-jetbrains-editors.git'
+cookbook 'sprout-mysql',             git: 'git://github.com/pivotal-sprout/sprout-mysql.git'
+cookbook 'sprout-postgresql',        git: 'git://github.com/pivotal-sprout/sprout-postgresql.git'
+cookbook 'sprout-vim',               git: 'git://github.com/pivotal-sprout/sprout-vim.git'
+cookbook 'sprout-rbenv',             git: 'git://github.com/pivotal-sprout/sprout-rbenv.git'
+cookbook 'sprout-terminal',          git: 'git://github.com/pivotal-sprout/sprout-terminal.git'
+
+cookbook 'dmg'

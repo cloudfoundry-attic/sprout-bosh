@@ -1,0 +1,195 @@
+cookbook_paths:
+- .librarian/chef/cookbooks
+
+recipes:
+- sprout-base
+- sprout-base::homebrew
+- sprout-osx-settings
+- sprout-base::bash_it
+- sprout-homebrew
+
+- sprout-osx-settings::dock_preferences
+
+- sprout-osx-apps::flycut
+- sprout-osx-apps::iterm2
+- sprout-terminal
+- sprout-osx-apps::vagrant_plugins
+- cf-common::shiftit
+- sprout-redis
+- sprout-mysql
+- sprout-postgresql
+
+- sprout-base::workspace_directory
+- sprout-git
+- sprout-git::projects
+- sprout-git::authors
+
+- sprout-osx-apps::go
+- sprout-ruby
+- sprout-rbenv
+- sprout-jetbrains-editors::rubymine
+- sprout-jetbrains-editors::intellij
+- cf-vim
+
+- cf-bosh
+
+node_attributes:
+  versions:
+    bash_it: HEAD
+
+  bash_it:
+    enabled_plugins:
+      aliases:
+        - general
+        - bundler
+      completion:
+        - defaults
+        - git
+        - ssh
+      plugins:
+        - ssh
+    custom_plugins:
+      sprout-homebrew:
+        - bash_it/custom/brew-cask-global-appdir.bash
+      sprout-base:
+        - bash_it/custom/direnv.bash
+      sprout-git:
+        - bash_it/custom/git-duet_global.bash
+        - bash_it/custom/git-export_editor.bash
+      cf-bosh:
+        - bash_it/custom/bo.bash
+      cf-common:
+        - bash_it/custom/common-aliases.bash
+        - bash_it/custom/dirty-repos.bash
+        - bash_it/custom/goto.bash
+        - bash_it/custom/pullify.bash
+        - bash_it/custom/purge-system-gems.bash
+
+  git_projects:
+    -
+      - sprout-wrap
+      - git@github.com:pivotal-cf/sprout-wrap.git
+
+  rbenv:
+    default_ruby: "2.1.2"
+    rubies:
+      1.9.3: {}
+      2.1.5: {}
+
+
+  sprout:
+    vagrant:
+      plugins:
+        - name: vagrant-aws
+        - name: vagrant-berkshelf
+        - name: vagrant-omnibus
+        - name: vagrant-vmware-fusion
+
+    dock_preferences:
+      orientation: 'left'
+      auto_hide: true
+      clear_apps: true
+      tile_size: 35
+      magnification: false
+
+    homebrew:
+      formulae:
+        - ack
+        - boot2docker
+        - cmake
+        - direnv
+        - jsonpp
+        - jq
+        - libxml2 # Used by Nokogiri
+        - node
+        - pstree
+        - qt
+        - rbenv-gem-rehash
+        - s3cmd
+        - ssh-copy-id
+        - the_silver_searcher
+        - tig
+        - tmux
+        - tree
+        - watch
+        - wget
+      casks:
+        - chefdk
+        - github
+        - google-chrome
+        - iterm2
+        - java
+        - menumeters
+        - mou
+        - skype
+        - sourcetree
+        - virtualbox
+        - vmware-fusion
+
+    terminal:
+      default_profile: 'Pro'
+
+    iterm2:
+      color:
+        default: arthur
+
+    git:
+      aliases:
+        - 'ci "duet-commit -v"'
+
+      domain: pivotal.io
+      authors:
+        - initials: ah
+          name:     Aaron Hurley
+          username: ahurley
+        - initials: ci
+          name:     Corey Innis
+          username: cinnis
+        - initials: cm
+          name:     Caleb Miles
+          username: cmiles
+        - initials: co
+          name:     Colin Obyrne
+          username: cobyrne
+        - initials: dd
+          name:     Xing Zhou 
+          email:    xingzhou@cn.ibm.com
+        - initials: dk
+          name:     Dmitriy Kalinin
+          username: dkalinin
+        - initials: jrhb
+          name:     Jonathan Barnes
+          username: jbarnes
+        - initials: kk
+          name:     Kihyeon Kim
+          email:    kihyeon.kim@gmail.com
+        - initials: kl
+          name:     Kam Leung 
+          username: kleung 
+        - initials: lb
+          name:     Liang Biao
+          email:    rexxar.liang@huawei.com
+        - initials: lw
+          name:     Luke Woydziak
+          email:    luke.woydziak@emc.com
+        - initials: ms
+          name:     Maria Shaldibina
+          username: mshaldibina
+        - initials: mv
+          name:     Marco Voelz
+          email:    marco.voelz@sap.com
+        - initials: th
+          name:     Tim Hausler
+          username: thausler
+        - initials: ts
+          name:     Tyler Schultz
+          username: tschultz
+        - initials: ty
+          name:     Ted Young
+          username: tyoung
+        - initials: wc
+          name:     Wagner Camarao
+          email:    wagner@camarao.io
+        - initials: zh
+          name:     Hua Zhang
+          email:    zhuadl@cn.ibm.com
