@@ -171,6 +171,7 @@ node_attributes:
             - "git submodule update --init --recursive"
         - name: sprout-bosh
           url: git@github.com:pivotal-cf/sprout-bosh.git
+
       aliases:
         - 'ci "duet-commit -v"'
 
