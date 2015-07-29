@@ -14,7 +14,7 @@ recipes:
 - sprout-osx-apps::iterm2
 - sprout-terminal
 - sprout-osx-apps::vagrant_plugins
-- cf-common::shiftit
+- sprout-osx-apps::shiftit
 - sprout-redis
 - sprout-mysql
 - sprout-postgresql
@@ -59,12 +59,13 @@ node_attributes:
         - bash_it/custom/git-export_editor.bash
       sprout-bosh:
         - bash_it/custom/bo.bash
-      cf-common:
+        - bash_it/custom/brew-cask.bash
         - bash_it/custom/common-aliases.bash
         - bash_it/custom/dirty-repos.bash
         - bash_it/custom/goto.bash
         - bash_it/custom/pullify.bash
         - bash_it/custom/purge-system-gems.bash
+        - bash_it/custom/vim_as_default_editor.bash
 
   git_projects:
     -
