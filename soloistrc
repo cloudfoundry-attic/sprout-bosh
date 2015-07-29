@@ -29,7 +29,6 @@ recipes:
 - sprout-rbenv
 - sprout-jetbrains-editors::rubymine
 - sprout-jetbrains-editors::intellij
-- cf-vim
 
 - sprout-bosh::repos
 - sprout-bosh::checkman

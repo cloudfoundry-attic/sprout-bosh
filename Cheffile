@@ -2,8 +2,6 @@ site 'https://supermarket.getchef.com/api/v1'
 
 cookbook 'sprout-bosh', path: '.'
 
-cookbook 'cf-vim',    path: '..'
-
 cookbook 'osx',                      git: 'git://github.com/pivotal-sprout/osx.git'
 cookbook 'sprout-base',              git: 'git://github.com/pivotal-sprout/sprout-base.git'
 cookbook 'sprout-git',               git: 'git://github.com/pivotal-sprout/sprout-git.git'
