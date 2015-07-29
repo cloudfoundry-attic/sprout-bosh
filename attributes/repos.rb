@@ -1,4 +1,4 @@
-default['cf-bosh']['repos'] = [
+default['sprout-bosh']['repos'] = [
   { 'name' => 'deployments-bosh' },
   { 'name' => 'bosh', 'branch' => 'develop' },
   { 'name' => 'bosh-agent' },

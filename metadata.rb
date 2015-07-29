@@ -1,4 +1,4 @@
-name             'cf-bosh'
+name             'sprout-bosh'
 maintainer       'BOSH'
 maintainer_email 'cf-bosh-eng@pivotallabs.com'
 license          'private'

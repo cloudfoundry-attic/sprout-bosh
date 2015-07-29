@@ -1,4 +1,4 @@
-include_recipe 'cf-bosh::repos'
+include_recipe 'sprout-bosh::repos'
 
 directory "#{node['sprout']['home']}/Checkman" do
   recursive true
