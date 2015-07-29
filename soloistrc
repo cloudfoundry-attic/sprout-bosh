@@ -31,7 +31,8 @@ recipes:
 - sprout-jetbrains-editors::intellij
 - cf-vim
 
-- cf-bosh
+- sprout-bosh::repos
+- sprout-bosh::checkman
 
 node_attributes:
   versions:
@@ -56,7 +57,7 @@ node_attributes:
       sprout-git:
         - bash_it/custom/git-duet_global.bash
         - bash_it/custom/git-export_editor.bash
-      cf-bosh:
+      sprout-bosh:
         - bash_it/custom/bo.bash
       cf-common:
         - bash_it/custom/common-aliases.bash

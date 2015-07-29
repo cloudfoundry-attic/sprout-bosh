@@ -1,6 +1,6 @@
 site 'https://supermarket.getchef.com/api/v1'
 
-cookbook 'cf-bosh', path: '.'
+cookbook 'sprout-bosh', path: '.'
 
 cookbook 'cf-common', path: '..'
 cookbook 'cf-vim',    path: '..'
