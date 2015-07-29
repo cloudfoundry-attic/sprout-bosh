@@ -142,35 +142,15 @@ GIT
 PATH
   remote: .
   specs:
-    cf-bosh (0.1.0)
-      cf-common (>= 0.0.0)
+    sprout-bosh (0.1.0)
       sprout-base (>= 0.0.0)
       sprout-osx-apps (>= 0.0.0)
-
-PATH
-  remote: ..
-  specs:
-    cf-common (0.1.0)
-      homebrew (>= 1.6.6)
-      sprout-base (>= 0.0.0)
-      sprout-git (>= 0.0.0)
-      sprout-homebrew (>= 0.0.0)
-      sprout-mysql (>= 0.0.0)
-      sprout-osx-apps (>= 0.0.0)
-      sprout-postgresql (>= 0.0.0)
-      sprout-redis (>= 0.0.0)
-    cf-vim (0.1.0)
-      homebrew (>= 0.0.0)
-      sprout-base (>= 0.0.0)
-      sprout-homebrew (>= 0.0.0)
 
 DEPENDENCIES
-  cf-bosh (>= 0)
-  cf-common (>= 0)
-  cf-vim (>= 0)
   dmg (>= 0)
   osx (>= 0)
   sprout-base (>= 0)
+  sprout-bosh (>= 0)
   sprout-git (>= 0)
   sprout-homebrew (>= 0)
   sprout-jetbrains-editors (>= 0)
