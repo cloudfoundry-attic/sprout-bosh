@@ -1,12 +1,45 @@
-# cf-bosh
+# sprout-wrap
 
-## Run soloist
+[![Build Status](https://travis-ci.org/pivotal-cf/bosh-sprout.png?branch=master)](https://travis-ci.org/pivotal-cf/bosh-sprout)
 
-In the `cf-bosh` directory run:
+This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
+to run a subset of the recipes in sprout's cookbooks.
 
-```
-soloist
-```
+[Fork it](https://github.com/pivotal-cf/bosh-sprout/fork) to
+customize its [attributes](http://docs.opscode.com/chef_overview_attributes.html) in [soloistrc](/soloistrc) and the list of recipes
+you'd like to use for your team. You may also want to add other cookbooks to its [Cheffile](/Cheffile), perhaps one
+of the many [community cookbooks](http://community.opscode.com/cookbooks). By default it configures an OS X
+Mavericks workstation for Ruby development.
+
+Finally, if you've never used Chef before - we highly recommend you buy &amp; watch [this excellent 17 minute screencast](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates.
+
+## Installation under Mavericks (OS X 10.9)
+
+### 1. Clone this project
+
+    git clone https://github.com/pivotal-cf/bosh-sprout.git #note you may not have git yet, and will be prompted to install the command-line developer tools.  Go ahead and install
+    cd sprout-wrap
+
+### 2. Install soloist & and other required gems
+
+If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
+
+    sudo gem install bundler
+    bundle
+
+If you receive errors like this:
+
+    clang: error: unknown argument: '-multiply_definedsuppress'
+
+then try downgrading those errors like this:
+
+    sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle
+
+### 3. Run soloist
+
+[The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
+
+    caffeinate bundle exec soloist
 
 ## Manually tweak the final set of things we don't yet have automated
 1. Mirror displays
@@ -38,3 +71,12 @@ soloist
 1. Gem install bundler (https://www.pivotaltracker.com/story/show/90239920)
 1. Gem install git-duet 
   1.  run `gem install git-duet`
+
+## Discussion List
+
+  Join [sprout-users@googlegroups.com](https://groups.google.com/forum/#!forum/sprout-users) if you use Sprout.
+
+## References
+
+* Slides from @hiremaga's [lightning talk on Sprout](http://sprout-talk.cfapps.io/) at Pivotal Labs in June 2013
+* [Railscast on chef-solo](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates (PAID)
