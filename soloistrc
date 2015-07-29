@@ -30,8 +30,6 @@ recipes:
 - sprout-jetbrains-editors::rubymine
 - sprout-jetbrains-editors::intellij
 
-- sprout-bosh::checkman
-
 node_attributes:
   versions:
     bash_it: HEAD
