@@ -30,7 +30,6 @@ recipes:
 - sprout-jetbrains-editors::rubymine
 - sprout-jetbrains-editors::intellij
 
-- sprout-bosh::repos
 - sprout-bosh::checkman
 
 node_attributes:
@@ -65,11 +64,6 @@ node_attributes:
         - bash_it/custom/pullify.bash
         - bash_it/custom/purge-system-gems.bash
         - bash_it/custom/vim_as_default_editor.bash
-
-  git_projects:
-    -
-      - sprout-wrap
-      - git@github.com:pivotal-cf/sprout-wrap.git
 
   rbenv:
     default_ruby: "2.1.2"
@@ -135,6 +129,50 @@ node_attributes:
         default: arthur
 
     git:
+      projects:
+        - name: deployments-bosh
+          url: git@github.com:cloudfoundry/deployments-bosh.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh
+          url: git@github.com:cloudfoundry/bosh.git
+          post_clone_commands:
+            - "git checkout develop"
+            - "git submodule update --init --recursive"
+        - name: bosh-agent
+          url: git@github.com:cloudfoundry/bosh-agent.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-micro-cli
+          url: git@github.com:cloudfoundry/bosh-micro-cli.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-lite
+          url: git@github.com:cloudfoundry/bosh-lite.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: dummy-boshrelease
+          url: git@github.com:pivotal-cf-experimental/dummy-boshrelease.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-aws-cpi-release
+          url: git@github.com:cloudfoundry-incubator/bosh-aws-cpi-release.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-openstack-cpi-release
+          url: git@github.com:cloudfoundry-incubator/bosh-openstack-cpi-release.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-vcloud-cpi-release
+          url: git@github.com:cloudfoundry-incubator/bosh-vcloud-cpi-release.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: bosh-vsphere-cpi-release
+          url: git@github.com:cloudfoundry-incubator/bosh-vsphere-cpi-release.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
+        - name: sprout-bosh
+          url: git@github.com:pivotal-cf/sprout-bosh.git
       aliases:
         - 'ci "duet-commit -v"'
 
