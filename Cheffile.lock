@@ -58,7 +58,7 @@ GIT
 GIT
   remote: git://github.com/pivotal-sprout/sprout-osx-apps.git
   ref: master
-  sha: ba546bbae0450d58025e42bdff83f546a2689075
+  sha: 043d2c3773c305c3e6efa8906c55d4d2177f08a3
   specs:
     sprout-osx-apps (0.1.0)
       dmg (>= 0.0.0)
@@ -132,9 +132,9 @@ GIT
 GIT
   remote: git://github.com/pivotal-sprout/sprout-vim.git
   ref: master
-  sha: 8e6133a33f62abc9f1e5232bee446b74e45c4753
+  sha: c80e7b92ec30af28340703631b9f8c88c79f963d
   specs:
-    sprout-vim (0.1.0)
+    sprout-vim (0.2.0)
       homebrew (>= 0.0.0)
       sprout-base (>= 0.0.0)
       sprout-osx-apps (>= 0.0.0)

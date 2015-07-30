@@ -30,6 +30,8 @@ recipes:
 - sprout-jetbrains-editors::rubymine
 - sprout-jetbrains-editors::intellij
 
+- sprout-vim::config #this recipe messes up the terminal session so better to be run last
+
 node_attributes:
   versions:
     bash_it: HEAD
@@ -231,3 +233,7 @@ node_attributes:
         - initials: zh
           name:     Hua Zhang
           email:    zhuadl@cn.ibm.com
+
+    vim:
+      config:
+        repo: "https://github.com/luan/vimfiles.git"
