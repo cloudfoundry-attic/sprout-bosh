@@ -163,6 +163,10 @@ node_attributes:
           url: git@github.com:cloudfoundry-incubator/bosh-openstack-cpi-release.git
           post_clone_commands:
             - "git submodule update --init --recursive"
+        - name: bosh_vcloud_cpi
+          url: git@github.com:cloudfoundry/bosh_vcloud_cpi.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
         - name: bosh-vcloud-cpi-release
           url: git@github.com:cloudfoundry-incubator/bosh-vcloud-cpi-release.git
           post_clone_commands:
@@ -173,6 +177,10 @@ node_attributes:
             - "git submodule update --init --recursive"
         - name: sprout-bosh
           url: git@github.com:pivotal-cf/sprout-bosh.git
+        - name: bosh-concourse-ci
+          url: git@github.com:cloudfoundry/bosh-concourse-ci.git
+          post_clone_commands:
+            - "git submodule update --init --recursive"
 
       aliases:
         - 'ci "duet-commit -v"'
