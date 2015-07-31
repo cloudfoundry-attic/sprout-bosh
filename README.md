@@ -69,8 +69,6 @@ then try downgrading those errors like this:
       1. go to: Project settings (cmd+;) -> Project Settings -> Project -> Project SDK
       1. choose Go 1.x.x
 1. Gem install bundler (https://www.pivotaltracker.com/story/show/90239920)
-1. Gem install git-duet 
-  1.  run `gem install git-duet`
 
 ## Discussion List
 
