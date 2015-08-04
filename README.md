@@ -1,11 +1,11 @@
-# sprout-wrap
+# sprout-bosh
 
-[![Build Status](https://travis-ci.org/pivotal-cf/bosh-sprout.png?branch=master)](https://travis-ci.org/pivotal-cf/bosh-sprout)
+[![Build Status](https://travis-ci.org/pivotal-cf/sprout-bosh.png?branch=master)](https://travis-ci.org/pivotal-cf/sprout-bosh)
 
 This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
 to run a subset of the recipes in sprout's cookbooks.
 
-[Fork it](https://github.com/pivotal-cf/bosh-sprout/fork) to
+[Fork it](https://github.com/pivotal-cf/sprout-bosh/fork) to
 customize its [attributes](http://docs.opscode.com/chef_overview_attributes.html) in [soloistrc](/soloistrc) and the list of recipes
 you'd like to use for your team. You may also want to add other cookbooks to its [Cheffile](/Cheffile), perhaps one
 of the many [community cookbooks](http://community.opscode.com/cookbooks). By default it configures an OS X
@@ -17,8 +17,8 @@ Finally, if you've never used Chef before - we highly recommend you buy &amp; wa
 
 ### 1. Clone this project
 
-    git clone https://github.com/pivotal-cf/bosh-sprout.git #note you may not have git yet, and will be prompted to install the command-line developer tools.  Go ahead and install
-    cd sprout-wrap
+    git clone https://github.com/pivotal-cf/sprout-bosh.git #note you may not have git yet, and will be prompted to install the command-line developer tools.  Go ahead and install
+    cd sprout-bosh
 
 ### 2. Install soloist & and other required gems
 
