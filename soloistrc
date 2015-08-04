@@ -222,12 +222,18 @@ node_attributes:
         - initials: lw
           name:     Luke Woydziak
           email:    luke.woydziak@emc.com
+        - initials: mm
+          name:     Megan Murawski
+          email:    megan.hyland@emc.com
         - initials: ms
           name:     Maria Shaldibina
           username: mshaldibina
         - initials: mv
           name:     Marco Voelz
           email:    marco.voelz@sap.com
+        - initials: sw
+          name:     Scott Weiss
+          email:    scott.weiss@emc.com
         - initials: th
           name:     Tim Hausler
           username: thausler
