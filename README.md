@@ -15,12 +15,18 @@ Finally, if you've never used Chef before - we highly recommend you buy &amp; wa
 
 ## Installation under Mavericks (OS X 10.9)
 
-### 1. Clone this project
+### 1. Add an ssh key to the machines ssh-agent with access to all the repos you are cloning:
+  The list of repos we clone can be found in the [soloistrc](https://github.com/pivotal-cf/sprout-bosh/blob/master/soloistrc) under the key: `node_attributes->sprout->git->projects`
+
+    ssh-add -D
+    ssh-add -t 5H [path/to/private-key]
+
+### 2. Clone this project
 
     git clone https://github.com/pivotal-cf/sprout-bosh.git #note you may not have git yet, and will be prompted to install the command-line developer tools.  Go ahead and install
     cd sprout-bosh
 
-### 2. Install soloist & and other required gems
+### 3. Install soloist & and other required gems
 
 If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
 
@@ -35,13 +41,19 @@ then try downgrading those errors like this:
 
     sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle
 
-### 3. Run soloist
+### 4. Run soloist
 
 [The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
 
     caffeinate bundle exec soloist
 
-## Manually tweak the final set of things we don't yet have automated
+#### 4.1 Re-run soloist untill it passes
+
+some of the chef recipes may not pass the first time they are run (they download binaries from all over the internet, some time they don't get it all the first time) and you should try to re-run a couple of times.  If the recipe repeatadly fails you may need to disable the recipe in the [soloistrc](https://github.com/pivotal-cf/sprout-bosh/blob/master/soloistrc) and move on. You can test success by `echo $?` after the command finishes.  if it returns `0` that is success anything else is a failure and should be retried.
+
+    caffeinate bundle exec soloist
+
+### 5. Manually tweak the final set of things we don't yet have automated
 1. Mirror displays
 1. Configure Finder
   1. Add ~/pivotal to Finder sidenav (https://www.pivotaltracker.com/story/show/89970764)
