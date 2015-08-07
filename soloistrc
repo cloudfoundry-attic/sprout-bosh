@@ -207,6 +207,9 @@ node_attributes:
         - initials: dk
           name:     Dmitriy Kalinin
           username: dkalinin
+        - initials: ex
+          name:     Edwin Xie
+          username: exie
         - initials: jrhb
           name:     Jonathan Barnes
           username: jbarnes
