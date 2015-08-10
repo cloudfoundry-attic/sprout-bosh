@@ -119,6 +119,7 @@ node_attributes:
         - mou
         - screenhero
         - skype
+        - slack
         - sourcetree
         - virtualbox
         - vmware-fusion
