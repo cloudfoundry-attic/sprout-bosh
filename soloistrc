@@ -250,6 +250,9 @@ node_attributes:
         - initials: wc
           name:     Wagner Camarao
           email:    wcamarao@vmware.com
+        - initials: xhe
+          name:     Xuebin He
+          email:    xuebin.he@emc.com
         - initials: zh
           name:     Hua Zhang
           email:    zhuadl@cn.ibm.com
