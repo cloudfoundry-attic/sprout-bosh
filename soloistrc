@@ -72,7 +72,6 @@ node_attributes:
       1.9.3: {}
       2.1.5: {}
 
-
   sprout:
     vagrant:
       plugins:
@@ -146,8 +145,8 @@ node_attributes:
           url: git@github.com:cloudfoundry/bosh-agent.git
           post_clone_commands:
             - "git submodule update --init --recursive"
-        - name: bosh-micro-cli
-          url: git@github.com:cloudfoundry/bosh-micro-cli.git
+        - name: bosh-init
+          url: git@github.com:cloudfoundry/bosh-init.git
           post_clone_commands:
             - "git submodule update --init --recursive"
         - name: bosh-lite
