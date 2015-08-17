@@ -52,6 +52,9 @@ node_attributes:
       global_config:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
       authors:
+        - initials: bw
+          name: Ben Watts
+          username: bwatts
         - initials: dw
           name: Dan Wendorf
           username: dwendorf
@@ -61,12 +64,6 @@ node_attributes:
         - initials: jp
           name: Jeff Pak
           email: jeffrey.pak@emc.com
-        - initials: jraq
-          name: James Quintana
-          username: jquintana
-        - initials: ld
-          name: Liz Dahlstrom
-          username: edahlstrom
         - initials: rm
           name: Raina Masand
           username: rmasand
