@@ -161,6 +161,8 @@ node_attributes:
         url: https://bosh.runtime.ci.cf-app.com
       - name: minimal
         url: https://54.165.111.247
+      - name: wasabi
+        url: https://bosh.wasabi.cf-app.com
 
   versions:
     bash_it: HEAD
