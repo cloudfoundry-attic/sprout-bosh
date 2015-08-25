@@ -192,5 +192,5 @@ node_attributes:
       - caskroom/versions
       - universal-ctags/universal-ctags
   keyboard_preferences:
-    key_repeat_rate_lower_is_faster: 0
-    initial_repeat_delay_lower_is_shorter: 5
+    key_repeat_rate_lower_is_faster: 2
+    initial_repeat_delay_lower_is_shorter: 15
