@@ -192,6 +192,9 @@ node_attributes:
         - initials: ah
           name:     Aaron Hurley
           username: ahurley
+        - initials: am
+          name:     Alexey Miroshkin
+          email:    alexey.miroshkin@ru.ibm.com
         - initials: ci
           name:     Corey Innis
           username: cinnis
