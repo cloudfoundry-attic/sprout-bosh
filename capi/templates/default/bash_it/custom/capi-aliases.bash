@@ -1,7 +1,6 @@
-alias resprout='(~/workspace/sprout-capi && git pull && bundle exec soloist)'
-alias create-lite='bosh create release --force && bosh target 192.168.50.4 lite && ./bosh-lite/make_manifest && bosh -n upload release && bosh -n deploy'
-alias cats='(cd ~/workspace/cf-release/src/acceptance-tests && CONFIG=$PWD/integration_config.json bin/test -nodes 4)'
+alias resprout='(cd ~/workspace/sprout-capi && git pull && chruby-exec system -- bundle exec soloist)'
+alias cats='(cd ~/workspace/cf-release/src/github.com/cloudfoundry/cf-acceptance-tests && CONFIG=$PWD/integration_config.json bin/test_default -p)'
 
 # Bosh-lite setup
-alias qnd-deploy='bosh create release --name cf --force && bosh upload release && bosh -n deploy'
-alias qnd-deploy-manifest='bosh-lite/make_manifest && qnd-deploy'
+alias qnd-deploy='(cd ~/workspace/cf-release && bosh create release --name cf --force && bosh upload release && bosh -n deploy)'
+alias qnd-deploy-manifest='(cd ~/workspace/cf-release && bosh-lite/make_manifest && qnd-deploy)'
