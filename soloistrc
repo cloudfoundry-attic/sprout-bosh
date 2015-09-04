@@ -132,7 +132,7 @@ node_attributes:
         - virtualbox
         - xscope
     chruby:
-      default_ruby: '2.1.6'
+      default_ruby: '2.1.7'
       rubies:
         ruby:
           - '2.1.6'
