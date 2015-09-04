@@ -3,4 +3,4 @@ alias cats='(cd ~/workspace/cf-release/src/github.com/cloudfoundry/cf-acceptance
 
 # Bosh-lite setup
 alias qnd-deploy='(cd ~/workspace/cf-release && bosh create release --name cf --force && bosh upload release && bosh -n deploy)'
-alias qnd-deploy-manifest='(cd ~/workspace/cf-release && bosh-lite/make_manifest && qnd-deploy)'
+alias qnd-deploy-manifest='(cd ~/workspace/cf-release && scripts/generate-bosh-lite-dev-manifest && qnd-deploy)'
