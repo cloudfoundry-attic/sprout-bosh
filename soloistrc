@@ -52,6 +52,7 @@ node_attributes:
         - bash_it/custom/brew-cask-global-appdir.bash
       sprout-base:
         - bash_it/custom/direnv.bash
+        - bash_it/custom/add_user_initials_to_git_prompt_info.bash
       sprout-git:
         - bash_it/custom/git-duet_global.bash
         - bash_it/custom/git-export_editor.bash
