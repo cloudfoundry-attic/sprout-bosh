@@ -7,6 +7,10 @@ recipes:
 - homebrew::install_taps
 - sprout-homebrew
 
+# apps
+- sprout-osx-apps::iterm2
+- sprout-osx-apps::shiftit
+
 # settings
 - sprout-osx-settings
 - sprout-osx-settings::dock_preferences
@@ -27,13 +31,8 @@ recipes:
 - sprout-mysql
 - sprout-postgresql
 
-# apps
-- sprout-osx-apps::iterm2
-- sprout-osx-apps::flycut
-
 # apps (editors)
 - sprout-osx-apps::textmate_preferences
-- sprout-osx-apps::macvim
 - sprout-jetbrains-editors::rubymine
 
 # runtime-specific
@@ -120,12 +119,14 @@ node_attributes:
         - watch
         - wget
       casks:
+        - flycut
         - gitx-rowanj
         - github
         - google-chrome
         - iterm2-nightly
         - java
         - karabiner
+        - macvim
         - menumeters
         - mou
         - sequel-pro

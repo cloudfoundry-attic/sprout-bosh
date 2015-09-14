@@ -41,10 +41,11 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-homebrew
   ref: master
-  sha: a2449dcc434ecd325abc150c75c39b7f6979f413
+  sha: bfcc9b809638bb5cb3d6260aef61ed4de82c2445
   specs:
     sprout-homebrew (0.2.0)
       homebrew (>= 1.5.4)
+      sprout-base (>= 0.0.0)
 
 GIT
   remote: https://github.com/pivotal-sprout/sprout-jetbrains-editors
