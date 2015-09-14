@@ -1,6 +1,6 @@
 # sprout-wrap
 
-[![Build Status](https://travis-ci.org/pivotal-sprout/sprout-wrap.png?branch=master)](https://travis-ci.org/pivotal-sprout/sprout-wrap)
+[![Build Status](https://travis-ci.org/cloudfoundry-incubator/sprout-capi.png?branch=master)](https://travis-ci.org/cloudfoundry-incubator/sprout-capi)
 
 This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
 to run a subset of the recipes in sprout's cookbooks.
