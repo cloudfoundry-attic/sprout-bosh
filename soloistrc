@@ -121,7 +121,7 @@ node_attributes:
       casks:
         - flycut
         - gitx-rowanj
-        - github
+        - github-desktop
         - google-chrome
         - iterm2-nightly
         - java
