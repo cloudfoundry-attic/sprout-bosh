@@ -138,11 +138,12 @@ node_attributes:
         - virtualbox
         - xscope
     chruby:
-      default_ruby: '2.1.7'
+      default_ruby: '2.2.3'
       rubies:
         ruby:
           - '2.1.6'
           - '2.1.7'
+          - '2.2.3'
 
   bosh:
     directors:
