@@ -194,6 +194,7 @@ node_attributes:
       capi:
         - bash_it/custom/capi-aliases.bash
         - bash_it/custom/capi-env.bash
+        - bash_it/custom/always_duet.bash
   homebrew:
     taps:
       - pivotal/tap
