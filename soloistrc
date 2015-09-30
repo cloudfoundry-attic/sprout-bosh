@@ -76,6 +76,9 @@ node_attributes:
         - initials: zr
           name: Zach Robinson
           username: zrobinson
+        - initials: sr
+          name: Swetha Repakula
+          email: srepaku@us.ibm.com
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
