@@ -86,7 +86,7 @@ node_attributes:
         - url: https://github.com/cloudfoundry/cf-release
           post_clone_commands:
             - git checkout develop
-            - ./update
+            - ./scripts/update
         - url: https://github.com/cloudfoundry-incubator/diego-release
           post_clone_commands:
             - git checkout develop
