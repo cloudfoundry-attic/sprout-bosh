@@ -21,6 +21,7 @@ recipes:
 
 - sprout-base::workspace_directory
 - sprout-git
+- sprout-ssh::known_hosts_github
 - sprout-git::projects
 - sprout-git::git_duet
 
@@ -179,7 +180,7 @@ node_attributes:
           post_clone_commands:
             - "git submodule update --init --recursive"
         - name: sprout-bosh
-          url: git@github.com:pivotal-cf/sprout-bosh.git
+          url: git@github.com:cloudfoundry/sprout-bosh.git
         - name: bosh-concourse-ci
           url: git@github.com:cloudfoundry/bosh-concourse-ci.git
           post_clone_commands:
