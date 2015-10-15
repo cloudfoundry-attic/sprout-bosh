@@ -197,6 +197,9 @@ node_attributes:
         - initials: am
           name:     Alexey Miroshkin
           email:    alexey.miroshkin@ru.ibm.com
+        - initials: bv
+          name:     Beyhan Veli
+          email:    beyhan.veli@sap.com 
         - initials: ci
           name:     Corey Innis
           username: cinnis
