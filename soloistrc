@@ -8,7 +8,8 @@ recipes:
 - sprout-homebrew
 
 # apps
-- sprout-osx-apps::iterm2
+- capi::iterm2
+- capi::spectacle
 
 # settings
 - sprout-osx-settings
@@ -127,7 +128,6 @@ node_attributes:
         - gitx-rowanj
         - github-desktop
         - google-chrome
-        - iterm2-nightly
         - itsycal
         - java
         - karabiner
@@ -137,7 +137,6 @@ node_attributes:
         - sequel-pro
         - slack
         - sourcetree
-        - spectacle
         - vagrant
         - virtualbox
         - xscope
