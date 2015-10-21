@@ -57,9 +57,6 @@ node_attributes:
         - initials: dw
           name: Dan Wendorf
           username: dwendorf
-        - initials: gc
-          name: Greg Cobb
-          username: gcobb
         - initials: jp
           name: Jeff Pak
           email: jeffrey.pak@emc.com
@@ -138,6 +135,7 @@ node_attributes:
         - menumeters
         - mou
         - sequel-pro
+        - slack
         - sourcetree
         - spectacle
         - vagrant
