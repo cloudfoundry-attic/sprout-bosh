@@ -58,6 +58,9 @@ node_attributes:
         - initials: dw
           name: Dan Wendorf
           username: dwendorf
+        - initials: fk
+          name: Frank Kotsianas
+          username: fkotsianas
         - initials: jp
           name: Jeff Pak
           email: jeffrey.pak@emc.com
@@ -67,15 +70,15 @@ node_attributes:
         - initials: rm
           name: Raina Masand
           username: rmasand
+        - initials: sr
+          name: Swetha Repakula
+          email: srepaku@us.ibm.com
         - initials: uu
           name: Utako Ueda
           username: uueda
         - initials: zr
           name: Zach Robinson
           username: zrobinson
-        - initials: sr
-          name: Swetha Repakula
-          email: srepaku@us.ibm.com
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
