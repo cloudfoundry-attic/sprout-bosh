@@ -23,8 +23,8 @@ If you receive a message about the update server being unavailable and are on Ma
 
 ### 2. Clone this project
 
-    git clone https://github.com/pivotal-sprout/sprout-wrap.git
-    cd sprout-wrap
+    git clone https://github.com/cloudfoundry/sprout-capi.git
+    cd sprout-capi
 
 ### 3. Install soloist & and other required gems
 
