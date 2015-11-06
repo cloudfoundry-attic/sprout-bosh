@@ -201,6 +201,7 @@ node_attributes:
         - bash_it/custom/capi-aliases.bash
         - bash_it/custom/capi-env.bash
         - bash_it/custom/always_duet.bash
+        - bash_it/custom/recreate-bosh-lite.bash
   homebrew:
     taps:
       - pivotal/tap
