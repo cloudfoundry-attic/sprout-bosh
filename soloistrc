@@ -52,9 +52,6 @@ node_attributes:
       global_config:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
       authors:
-        - initials: bw
-          name: Ben Watts
-          username: bwatts
         - initials: dw
           name: Dan Wendorf
           username: dwendorf
@@ -67,6 +64,9 @@ node_attributes:
         - initials: jb
           name: Jonathan Berkhahn
           email: jaberkha@us.ibm.com
+        - initials: kc
+          name: Kira Combs
+          username: kcombs
         - initials: rm
           name: Raina Masand
           username: rmasand
