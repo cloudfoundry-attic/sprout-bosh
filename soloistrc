@@ -73,6 +73,9 @@ node_attributes:
         - initials: sr
           name: Swetha Repakula
           email: srepaku@us.ibm.com
+        - initials: ur
+          name: Urvashi Reddy
+          username: ureddy
         - initials: uu
           name: Utako Ueda
           username: uueda
