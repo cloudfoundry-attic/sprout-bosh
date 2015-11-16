@@ -64,12 +64,12 @@ node_attributes:
         - initials: jb
           name: Jonathan Berkhahn
           email: jaberkha@us.ibm.com
+        - initials: kf
+          name: Kara Felix
+          email: kfelix@us.ibm.com
         - initials: kc
           name: Kira Combs
           username: kcombs
-        - initials: rm
-          name: Raina Masand
-          username: rmasand
         - initials: sr
           name: Swetha Repakula
           email: srepaku@us.ibm.com
