@@ -1,4 +1,4 @@
-function recreate-bosh-lite() {
+function recreate_bosh_lite() {
   (read -s -p "password: " password
   if [[ $1 == "-u" ]]; then
     echo -e '\nWill Update cf-release and diego-release'
@@ -71,4 +71,4 @@ function recreate-bosh-lite() {
   cd ~/workspace/cf-release
   rm -f $stemcell)
 }
-export -f recreate-bosh-lite
+export -f recreate_bosh_lite
