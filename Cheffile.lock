@@ -50,7 +50,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-jetbrains-editors
   ref: master
-  sha: a11eb401cbc0a0e016c2a0fd7c6cded228159ef3
+  sha: f76ff8a7d94ba237bc9517cbec3021ba51281f5b
   specs:
     sprout-jetbrains-editors (0.1.0)
       sprout-base (>= 0.0.0)
