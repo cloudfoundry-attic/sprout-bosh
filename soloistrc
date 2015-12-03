@@ -199,7 +199,7 @@ node_attributes:
           email:    alexey.miroshkin@ru.ibm.com
         - initials: bv
           name:     Beyhan Veli
-          email:    beyhan.veli@sap.com 
+          email:    beyhan.veli@sap.com
         - initials: ci
           name:     Corey Innis
           username: cinnis
@@ -210,7 +210,7 @@ node_attributes:
           name:     Colin Obyrne
           username: cobyrne
         - initials: dd
-          name:     Xing Zhou 
+          name:     Xing Zhou
           email:    xingzhou@cn.ibm.com
         - initials: dk
           name:     Dmitriy Kalinin
@@ -225,8 +225,8 @@ node_attributes:
           name:     Kihyeon Kim
           email:    kihyeon.kim@gmail.com
         - initials: kl
-          name:     Kam Leung 
-          username: kleung 
+          name:     Kam Leung
+          username: kleung
         - initials: lb
           name:     Liang Biao
           email:    rexxar.liang@huawei.com
@@ -240,8 +240,8 @@ node_attributes:
           name:     Maria Shaldibina
           username: mshaldibina
         - initials: mv
-          name:     Marco Voelz
-          email:    marco.voelz@sap.com
+          name:     Mikhail Vyshegorodtsev
+          email:    mvyshegorodtse@vmware.com
         - initials: sw
           name:     Scott Weiss
           email:    scott.weiss@emc.com
