@@ -248,6 +248,9 @@ node_attributes:
         - initials: th
           name:     Tim Hausler
           username: thausler
+        - initials: tn
+          name:     Thinh Nguyen
+          email:    thinh.nguyen@emc.com
         - initials: ts
           name:     Tyler Schultz
           username: tschultz
