@@ -54,6 +54,7 @@ node_attributes:
       sprout-base:
         - bash_it/custom/direnv.bash
         - bash_it/custom/add_user_initials_to_git_prompt_info.bash
+        - bash_it/custom/always_update_history.bash
       sprout-git:
         - bash_it/custom/git-duet_global.bash
         - bash_it/custom/git-export_editor.bash

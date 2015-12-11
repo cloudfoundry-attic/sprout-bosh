@@ -16,7 +16,7 @@ GIT
 GIT
   remote: git://github.com/pivotal-sprout/sprout-base.git
   ref: master
-  sha: cfac611a3515fe52e90d73403036403b487b1c33
+  sha: 1d8fc220053a45748d94cffa5397d717812c18b7
   specs:
     sprout-base (0.2.0)
 
