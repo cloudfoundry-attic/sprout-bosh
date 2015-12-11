@@ -81,7 +81,6 @@ node_attributes:
         - name: vagrant-aws
         - name: vagrant-berkshelf
         - name: vagrant-omnibus
-        - name: vagrant-vmware-fusion
 
     dock_preferences:
       orientation: 'left'
