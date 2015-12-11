@@ -96,8 +96,8 @@ node_attributes:
         - boot2docker
         - cmake
         - direnv
-        - jsonpp
         - jq
+        - jsonpp
         - libxml2 # Used by Nokogiri
         - node
         - pstree
@@ -117,6 +117,7 @@ node_attributes:
         - google-chrome
         - iterm2
         - java
+        - lastpass
         - menumeters
         - mou
         - screenhero
