@@ -137,20 +137,19 @@ node_attributes:
       projects_settings:
         recursive: true
       projects:
-        - github: cloudfoundry/deployments-bosh
-        - github: cloudfoundry/bosh
-          branch: develop
-        - github: cloudfoundry/bosh-agent
-        - github: cloudfoundry/bosh-init
-        - github: cloudfoundry/bosh-lite
-        - github: pivotal-cf-experimental/dummy-boshrelease
-        - github: cloudfoundry-incubator/bosh-aws-cpi-release
-        - github: cloudfoundry-incubator/bosh-openstack-cpi-release
-        - github: cloudfoundry/bosh_vcloud_cpi
-        - github: cloudfoundry-incubator/bosh-vcloud-cpi-release
-        - github: cloudfoundry-incubator/bosh-vsphere-cpi-release
-        - github: cloudfoundry/sprout-bosh
-        - github: cloudfoundry/bosh-concourse-ci
+        - { github: cloudfoundry-incubator/bosh-aws-cpi-release }
+        - { github: cloudfoundry-incubator/bosh-openstack-cpi-release }
+        - { github: cloudfoundry-incubator/bosh-vcloud-cpi-release }
+        - { github: cloudfoundry-incubator/bosh-vsphere-cpi-release }
+        - { github: cloudfoundry/bosh, branch: develop }
+        - { github: cloudfoundry/bosh-agent }
+        - { github: cloudfoundry/bosh-concourse-ci }
+        - { github: cloudfoundry/bosh-init }
+        - { github: cloudfoundry/bosh-lite }
+        - { github: cloudfoundry/bosh_vcloud_cpi }
+        - { github: cloudfoundry/deployments-bosh }
+        - { github: cloudfoundry/sprout-bosh }
+        - { github: pivotal-cf-experimental/dummy-boshrelease }
 
       aliases:
         - 'ci "duet-commit -v"'
