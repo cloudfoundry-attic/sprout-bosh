@@ -1,9 +1,9 @@
 SITE
   remote: https://supermarket.getchef.com/api/v1
   specs:
-    build-essential (2.2.3)
+    build-essential (2.2.4)
     dmg (2.2.2)
-    homebrew (1.13.0)
+    homebrew (2.0.3)
       build-essential (>= 2.1.2)
 
 GIT
@@ -23,9 +23,9 @@ GIT
 GIT
   remote: git://github.com/pivotal-sprout/sprout-git.git
   ref: master
-  sha: 2b74c5630fb96b60d36d363f94b52d2664edcdcc
+  sha: 2584d4b9d841342d418cf1dc705c70d0c8980292
   specs:
-    sprout-git (0.1.1)
+    sprout-git (0.2.0)
       homebrew (>= 0.0.0)
       sprout-base (>= 0.0.0)
 

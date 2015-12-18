@@ -134,58 +134,23 @@ node_attributes:
         default: arthur
 
     git:
+      projects_settings:
+        recursive: true
       projects:
-        - name: deployments-bosh
-          url: git@github.com:cloudfoundry/deployments-bosh.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh
-          url: git@github.com:cloudfoundry/bosh.git
-          post_clone_commands:
-            - "git checkout develop"
-            - "git submodule update --init --recursive"
-        - name: bosh-agent
-          url: git@github.com:cloudfoundry/bosh-agent.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-init
-          url: git@github.com:cloudfoundry/bosh-init.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-lite
-          url: git@github.com:cloudfoundry/bosh-lite.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: dummy-boshrelease
-          url: git@github.com:pivotal-cf-experimental/dummy-boshrelease.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-aws-cpi-release
-          url: git@github.com:cloudfoundry-incubator/bosh-aws-cpi-release.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-openstack-cpi-release
-          url: git@github.com:cloudfoundry-incubator/bosh-openstack-cpi-release.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh_vcloud_cpi
-          url: git@github.com:cloudfoundry/bosh_vcloud_cpi.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-vcloud-cpi-release
-          url: git@github.com:cloudfoundry-incubator/bosh-vcloud-cpi-release.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: bosh-vsphere-cpi-release
-          url: git@github.com:cloudfoundry-incubator/bosh-vsphere-cpi-release.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
-        - name: sprout-bosh
-          url: git@github.com:cloudfoundry/sprout-bosh.git
-        - name: bosh-concourse-ci
-          url: git@github.com:cloudfoundry/bosh-concourse-ci.git
-          post_clone_commands:
-            - "git submodule update --init --recursive"
+        - github: cloudfoundry/deployments-bosh
+        - github: cloudfoundry/bosh
+          branch: develop
+        - github: cloudfoundry/bosh-agent
+        - github: cloudfoundry/bosh-init
+        - github: cloudfoundry/bosh-lite
+        - github: pivotal-cf-experimental/dummy-boshrelease
+        - github: cloudfoundry-incubator/bosh-aws-cpi-release
+        - github: cloudfoundry-incubator/bosh-openstack-cpi-release
+        - github: cloudfoundry/bosh_vcloud_cpi
+        - github: cloudfoundry-incubator/bosh-vcloud-cpi-release
+        - github: cloudfoundry-incubator/bosh-vsphere-cpi-release
+        - github: cloudfoundry/sprout-bosh
+        - github: cloudfoundry/bosh-concourse-ci
 
       aliases:
         - 'ci "duet-commit -v"'
