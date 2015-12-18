@@ -144,12 +144,13 @@ node_attributes:
         - { github: cloudfoundry/bosh, branch: develop }
         - { github: cloudfoundry/bosh-agent }
         - { github: cloudfoundry/bosh-concourse-ci }
+        - { github: cloudfoundry/bosh-cpi-environments }
         - { github: cloudfoundry/bosh-init }
         - { github: cloudfoundry/bosh-lite }
-        - { github: cloudfoundry/bosh_vcloud_cpi }
-        - { github: cloudfoundry/deployments-bosh }
         - { github: cloudfoundry/sprout-bosh }
+        - { github: pivotal-cf-experimental/bosh-tools }
         - { github: pivotal-cf-experimental/dummy-boshrelease }
+        - { github: pivotal-golang/s3cli }
 
       aliases:
         - 'ci "duet-commit -v"'
