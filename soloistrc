@@ -61,15 +61,9 @@ node_attributes:
         - initials: jp
           name: Jeff Pak
           email: jeffrey.pak@emc.com
-        - initials: jb
-          name: Jonathan Berkhahn
-          email: jaberkha@us.ibm.com
         - initials: kf
           name: Kara Felix
           email: kfelix@us.ibm.com
-        - initials: kc
-          name: Kira Combs
-          username: kcombs
         - initials: sr
           name: Swetha Repakula
           email: srepaku@us.ibm.com
