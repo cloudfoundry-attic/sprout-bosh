@@ -3,5 +3,6 @@
   "admin_user": "admin",
   "admin_password": "admin",
   "apps_domain": "bosh-lite.com",
-  "skip_ssl_validation": true
+  "skip_ssl_validation": true,
+  "artifacts_directory": "/tmp/cats-trace"
 }
