@@ -64,9 +64,6 @@ node_attributes:
         - initials: kf
           name: Kara Felix
           email: kfelix@us.ibm.com
-        - initials: sr
-          name: Swetha Repakula
-          email: srepaku@us.ibm.com
         - initials: ur
           name: Urvashi Reddy
           username: ureddy
@@ -76,6 +73,9 @@ node_attributes:
         - initials: zr
           name: Zach Robinson
           username: zrobinson
+        - initials: sl
+          name: Simon Leung
+          email: leungs@us.ibm.com
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
