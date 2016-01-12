@@ -76,6 +76,9 @@ node_attributes:
         - initials: sl
           name: Simon Leung
           email: leungs@us.ibm.com
+        - initials: gc
+          name: Greg Cobb
+          username: gcobb
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
