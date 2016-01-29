@@ -1,5 +1,5 @@
 package 'vim'
-sprout_homebrew_cask 'macvim'
+homebrew_cask 'macvim'
 
 vimfiles = ::File.join(node['sprout']['home'], node['workspace_directory'], 'vimfiles')
 git vimfiles do

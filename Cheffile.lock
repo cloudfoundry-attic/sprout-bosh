@@ -40,15 +40,6 @@ GIT
       sprout-base (>= 0.0.0)
 
 GIT
-  remote: https://github.com/pivotal-sprout/sprout-homebrew
-  ref: master
-  sha: 68274f5f450a1cf1b0ae6748e4c4606d1ce47e87
-  specs:
-    sprout-homebrew (0.2.0)
-      homebrew (>= 1.5.4)
-      sprout-base (>= 0.0.0)
-
-GIT
   remote: https://github.com/pivotal-sprout/sprout-jetbrains-editors
   ref: master
   sha: 342225624e5c64adde7457bee502b8dbace51c3d
@@ -120,7 +111,6 @@ PATH
       sprout-base (>= 0.0.0)
       sprout-chruby (>= 0.0.0)
       sprout-git (>= 0.0.0)
-      sprout-homebrew (>= 0.0.0)
 
 DEPENDENCIES
   capi (>= 0)
@@ -129,7 +119,6 @@ DEPENDENCIES
   sprout-base (>= 0)
   sprout-chruby (>= 0)
   sprout-git (>= 0)
-  sprout-homebrew (>= 0)
   sprout-jetbrains-editors (>= 0)
   sprout-mysql (>= 0)
   sprout-osx-apps (>= 0)

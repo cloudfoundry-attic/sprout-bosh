@@ -26,9 +26,6 @@ cookbook 'sprout-osx-settings',
 cookbook 'osx',
   :github => 'pivotal-sprout/osx'
 
-cookbook 'sprout-homebrew',
-  :github => 'pivotal-sprout/sprout-homebrew'
-
 cookbook 'sprout-postgresql',
   :github => 'pivotal-sprout/sprout-postgresql'
 
