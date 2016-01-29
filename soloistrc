@@ -3,9 +3,10 @@ recipes:
 # base (required by sprout)
 - sprout-base
 - sprout-base::bash_it
-- sprout-base::homebrew
+- homebrew
 - homebrew::install_taps
-- sprout-homebrew
+- homebrew::install_formulas
+- homebrew::install_casks
 
 # apps
 - capi::iterm2
@@ -103,46 +104,6 @@ node_attributes:
       clear_apps: true
       tile_size: 35
       magnification: false
-    homebrew:
-      formulae:
-        - ack
-        - awscli
-        - cloudfoundry-cli
-        - direnv
-        - fasd
-        - name: fzf
-          head: true
-        - jq
-        - node
-        - pstree
-        - qt
-        - s3cmd
-        - ssh-copy-id
-        - tig
-        - the_silver_searcher
-        - tmux
-        - tree
-        - name: universal-ctags
-          head: true
-        - watch
-        - wget
-      casks:
-        - flycut
-        - gitx-rowanj
-        - github-desktop
-        - google-chrome
-        - itsycal
-        - java
-        - karabiner
-        - macvim
-        - menumeters
-        - mou
-        - sequel-pro
-        - slack
-        - sourcetree
-        - vagrant
-        - virtualbox
-        - xscope
     chruby:
       default_ruby: '2.2.4'
       rubies:
@@ -205,6 +166,45 @@ node_attributes:
         - bash_it/custom/always_duet.bash
         - bash_it/custom/recreate_bosh_lite.bash
   homebrew:
+    formulas:
+      - ack
+      - awscli
+      - cloudfoundry-cli
+      - direnv
+      - fasd
+      - name: fzf
+        head: true
+      - jq
+      - node
+      - pstree
+      - qt
+      - s3cmd
+      - ssh-copy-id
+      - tig
+      - the_silver_searcher
+      - tmux
+      - tree
+      - name: universal-ctags
+        head: true
+      - watch
+      - wget
+    casks:
+      - flycut
+      - rowanj-gitx
+      - github-desktop
+      - google-chrome
+      - itsycal
+      - java
+      - karabiner
+      - macvim
+      - menumeters
+      - mou
+      - sequel-pro
+      - slack
+      - sourcetree
+      - vagrant
+      - virtualbox
+      - xscope
     taps:
       - pivotal/tap
       - caskroom/versions
