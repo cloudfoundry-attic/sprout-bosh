@@ -183,7 +183,6 @@ node_attributes:
       - the_silver_searcher
       - tmux
       - tree
-      - pkg-config # Until https://github.com/universal-ctags/homebrew-universal-ctags/pull/7 is merged
       - name: universal-ctags
         head: true
       - watch
