@@ -206,7 +206,6 @@ node_attributes:
       - xscope
     taps:
       - pivotal/tap
-      - caskroom/versions
       - universal-ctags/universal-ctags
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2
