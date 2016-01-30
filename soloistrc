@@ -195,7 +195,6 @@ node_attributes:
       - github-desktop
       - google-chrome
       - itsycal
-      - java
       - karabiner
       - macvim
       - menumeters
