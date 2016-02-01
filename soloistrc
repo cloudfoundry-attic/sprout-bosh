@@ -198,6 +198,7 @@ node_attributes:
       - menumeters
       - mou
       - sequel-pro
+      - screenhero
       - slack
       - sourcetree
       - vagrant
