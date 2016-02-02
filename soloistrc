@@ -82,6 +82,8 @@ node_attributes:
           username: gcobb
       projects:
         - url: https://github.com/cloudfoundry/api-docs
+        - url: https://github.com/cloudfoundry-incubator/api-docs
+          name: v3-docs
         - url: https://github.com/cloudfoundry/bosh-lite
         - url: https://github.com/pivotal-cf-experimental/canibump
         - url: https://github.com/cloudfoundry/cf-release
