@@ -8,3 +8,5 @@ alias qnd-deploy-manifest='(cd ~/workspace/cf-release && scripts/generate-bosh-l
 
 #FASD
 alias v='fasd -e vim'
+
+alias bake='bundle exec rake'
