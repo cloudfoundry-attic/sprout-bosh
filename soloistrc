@@ -171,6 +171,7 @@ node_attributes:
       - awscli
       - cloudfoundry-cli
       - direnv
+      - dishy
       - fasd
       - name: fzf
         head: true
@@ -208,6 +209,7 @@ node_attributes:
     taps:
       - pivotal/tap
       - universal-ctags/universal-ctags
+      - businesscritical/tap
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2
     initial_repeat_delay_lower_is_shorter: 15
