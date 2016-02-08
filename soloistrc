@@ -79,6 +79,9 @@ node_attributes:
         - initials: gc
           name: Greg Cobb
           username: gcobb
+        - initials: rr
+          name: Rizwan Reza
+          username: rreza
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry-incubator/api-docs
