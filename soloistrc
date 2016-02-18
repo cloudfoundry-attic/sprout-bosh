@@ -20,6 +20,7 @@ recipes:
 - sprout-chruby
 - capi::fast_bosh
 - capi::pullify
+- capi::cf_cli
 
 # development (general)
 - sprout-base::workspace_directory

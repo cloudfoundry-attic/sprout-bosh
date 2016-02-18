@@ -1,0 +1,14 @@
+--lite
+  api api.bosh-lite.com --skip-ssl-validation
+  auth admin admin
+  create-org test
+  create-space -o test test
+  target -o test -s test
+
+--relite
+  api api.bosh-lite.com --skip-ssl-validation
+  auth admin admin
+  delete-org test -f
+  create-org test
+  create-space -o test test
+  target -o test -s test
