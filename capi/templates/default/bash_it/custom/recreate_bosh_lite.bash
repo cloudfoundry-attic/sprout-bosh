@@ -29,8 +29,20 @@ function recreate_bosh_lite() {
 
     bosh target lite
 
-    echo "Getting Stemcell"
-    bosh upload stemcell https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent
+    stemcell_data=`curl --retry 5 -s -L https://bosh.io/api/v1/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent`
+    stemcell_version=`jq '.[0].version' --raw-output <<< $stemcell_data`
+    stemcell_url=`jq '.[0].regular.url' --raw-output <<< $stemcell_data`
+    stemcell_filename="$HOME/Downloads/bosh-stemcell-$stemcell_version-warden-boshlite-ubuntu-trusty-go_agent.tgz"
+
+    if [ ! -f $stemcell_filename ]; then
+      echo "Downloading stemcell version $stemcell_version"
+      curl -L $stemcell_url -o $stemcell_filename
+    else
+      echo "Stemcell version $stemcell_version already exists"
+    fi
+
+    echo "Uploading Stemcell"
+    bosh -t lite upload stemcell $stemcell_filename
 
     if $update; then
       echo "Updating Diego-Release"
@@ -51,11 +63,35 @@ function recreate_bosh_lite() {
     bosh -t lite upload release
     bosh -t lite -n deploy
 
+    garden_release_data=`curl --retry 5 -s -L https://bosh.io/api/v1/releases/github.com/cloudfoundry-incubator/garden-linux-release`
+    garden_release_version=`jq '.[0].version' --raw-output <<< $garden_release_data`
+    garden_release_url=`jq '.[0].url' --raw-output <<< $garden_release_data`
+    garden_release_filename="$HOME/Downloads/garden-linux-release-$garden_release_version.tgz"
+
+    if [ ! -f $garden_release_filename ]; then
+      echo "Downloading garden release version $garden_release_version"
+      curl -L $garden_release_url -o $garden_release_filename
+    else
+      echo "Garden release version $garden_release_version already exists"
+    fi
+
     echo "Uploading Garden Linux"
-    bosh -t lite upload release https://bosh.io/d/github.com/cloudfoundry-incubator/garden-linux-release
+    bosh -t lite upload release $garden_release_filename
+
+    etcd_release_data=`curl --retry 5 -s -L https://bosh.io/api/v1/releases/github.com/cloudfoundry-incubator/etcd-release`
+    etcd_release_version=`jq '.[0].version' --raw-output <<< $etcd_release_data`
+    etcd_release_url=`jq '.[0].url' --raw-output <<< $etcd_release_data`
+    etcd_release_filename="$HOME/Downloads/etcd-release-$etcd_release_version.tgz"
+
+    if [ ! -f $etcd_release_filename ]; then
+      echo "Downloading etcd release version $etcd_release_version"
+      curl -L $etcd_release_url -o $etcd_release_filename
+    else
+      echo "Etcd release version $etcd_release_version already exists"
+    fi
 
     echo "Uploading etcd-release"
-    bosh -t lite upload release https://bosh.io/d/github.com/cloudfoundry-incubator/etcd-release
+    bosh -t lite upload release $etcd_release_filename
 
     cd ~/workspace/diego-release
 
