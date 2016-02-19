@@ -17,7 +17,7 @@ link dotvim do
   owner node['sprout']['user']
 end
 
-execute './install --non-interactive' do
+execute './update --non-interactive' do
   cwd dotvim
   user node['sprout']['user']
 end
