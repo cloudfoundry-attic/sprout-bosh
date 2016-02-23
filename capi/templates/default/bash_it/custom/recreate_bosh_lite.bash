@@ -59,6 +59,7 @@ function recreate_bosh_lite() {
     cd ~/workspace/cf-release
     ~/workspace/cf-release/scripts/generate-bosh-lite-dev-manifest
 
+    bosh --parallel 10 sync blobs
     bosh create release --name cf --force
     bosh -t lite upload release
     bosh -t lite -n deploy
@@ -99,6 +100,7 @@ function recreate_bosh_lite() {
     echo "Deploying Diego"
 
     bosh -t lite deployment bosh-lite/deployments/diego.yml
+    bosh --parallel 10 sync blobs
     bosh create release --force
     bosh -t lite -n upload release
     bosh -t lite -n deploy
