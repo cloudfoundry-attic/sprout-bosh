@@ -107,6 +107,8 @@ function recreate_bosh_lite() {
 
     cd ~/workspace/cf-release
     rm -f $stemcell
+
+    bosh -t lite deployment bosh-lite/deployments/cf.yml
   )
 }
 export -f recreate_bosh_lite
