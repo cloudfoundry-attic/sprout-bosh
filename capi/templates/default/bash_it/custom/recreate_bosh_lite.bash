@@ -1,5 +1,6 @@
 function recreate_bosh_lite() {
   (
+    set -e
     sudo true
 
     update=false
