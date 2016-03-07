@@ -11,3 +11,8 @@ alias qnd-deploy-manifest='(cd ~/workspace/cf-release && scripts/generate-bosh-l
 alias v='fasd -e vim'
 
 alias bake='bundle exec rake'
+
+# Git aliases
+alias gd='git diff'
+alias g='git status'
+
