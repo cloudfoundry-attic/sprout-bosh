@@ -110,6 +110,26 @@ function recreate_bosh_lite() {
     rm -f $stemcell
 
     bosh -t lite deployment bosh-lite/deployments/cf.yml
+
+    virtualbox_capi_version=$(brew cask list --versions | grep virtualbox-capi | awk '{print $2}')
+    reboot_time=$(last -1 reboot | awk '{print $3, $4, $5, $6}')
+    bosh_lite_box=$(vagrant box list | grep bosh-lite | awk '{print $3}' | sed 's/)//g' | sort -r | head -1)
+    vagrant_version=$(vagrant --version | awk '{print $2}')
+
+    function log() {
+      echo `date "+%Y-%m-%d %H:%M:%S %z"`: $* >> ~/Library/Logs/recreate_bosh_lite.log
+    }
+
+    function log_empty() {
+      echo '' >> ~/Library/Logs/recreate_bosh_lite.log
+    }
+
+    log ======= NEW BOSH LITE
+    log Virtualbox  $virtualbox_capi_version
+    log Last Reboot $reboot_time
+    log Bosh Lite   $bosh_lite_box
+    log Vagrant     $vagrant_version
+    log_empty
   )
 }
 export -f recreate_bosh_lite
