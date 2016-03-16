@@ -208,13 +208,12 @@ node_attributes:
       - slack
       - sourcetree
       - vagrant
-      - virtualbox-capi
+      - virtualbox
       - xscope
     taps:
       - pivotal/tap
       - universal-ctags/universal-ctags
       - businesscritical/tap
-      - businesscritical/capi
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2
     initial_repeat_delay_lower_is_shorter: 15
