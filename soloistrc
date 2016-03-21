@@ -59,15 +59,15 @@ node_attributes:
         - initials: es
           name: Eric Saxby
           username: esaxby
-        - initials: fk
-          name: Frank Kotsianas
-          username: fkotsianas
         - initials: jp
           name: Jeff Pak
           email: jeffrey.pak@emc.com
         - initials: kf
           name: Kara Felix
           email: kfelix@us.ibm.com
+        - initials: pg
+          name: Peter Goetz
+          email: peter.gtz@gmail.com
         - initials: ur
           name: Urvashi Reddy
           username: ureddy
