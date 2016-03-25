@@ -14,5 +14,8 @@ alias bake='bundle exec rake'
 
 # Git aliases
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias g='git status'
 
+# Misc aliases
+alias gi='gem install'
