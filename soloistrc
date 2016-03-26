@@ -173,7 +173,7 @@ node_attributes:
     formulas:
       - ack
       - awscli
-      - cloudfoundry-cli
+      - cf-cli
       - direnv
       - dishy
       - fasd
@@ -212,7 +212,7 @@ node_attributes:
       - atom
       - xscope
     taps:
-      - pivotal/tap
+      - cloudfoundry/tap
       - universal-ctags/universal-ctags
       - businesscritical/tap
   keyboard_preferences:
