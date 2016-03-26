@@ -173,6 +173,7 @@ node_attributes:
     formulas:
       - ack
       - awscli
+      - bosh-init
       - cf-cli
       - direnv
       - dishy
