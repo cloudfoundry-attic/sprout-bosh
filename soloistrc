@@ -209,6 +209,7 @@ node_attributes:
       - sourcetree
       - vagrant
       - virtualbox
+      - atom
       - xscope
     taps:
       - pivotal/tap
