@@ -111,7 +111,7 @@ function recreate_bosh_lite() {
 
     bosh -t lite deployment bosh-lite/deployments/cf.yml
 
-    virtualbox_capi_version=$(brew cask list --versions | grep virtualbox-capi | awk '{print $2}')
+    virtualbox_version=$(brew cask list --versions | grep virtualbox | awk '{print $2}')
     reboot_time=$(last -1 reboot | awk '{print $3, $4, $5, $6}')
     bosh_lite_box=$(vagrant box list | grep bosh-lite | awk '{print $3}' | sed 's/)//g' | sort -r | head -1)
     vagrant_version=$(vagrant --version | awk '{print $2}')
@@ -125,7 +125,7 @@ function recreate_bosh_lite() {
     }
 
     log ======= NEW BOSH LITE
-    log Virtualbox  $virtualbox_capi_version
+    log Virtualbox  $virtualbox_version
     log Last Reboot $reboot_time
     log Bosh Lite   $bosh_lite_box
     log Vagrant     $vagrant_version
