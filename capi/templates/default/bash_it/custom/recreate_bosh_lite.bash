@@ -37,7 +37,7 @@ function recreate_bosh_lite() {
 
     if [ ! -f $stemcell_filename ]; then
       echo "Downloading stemcell version $stemcell_version"
-      curl -L $stemcell_url -o $stemcell_filename
+      aria2c -x 16 -s 16 -o $stemcell_filename $stemcell_url
     else
       echo "Stemcell version $stemcell_version already exists"
     fi
@@ -72,7 +72,7 @@ function recreate_bosh_lite() {
 
     if [ ! -f $garden_release_filename ]; then
       echo "Downloading garden release version $garden_release_version"
-      curl -L $garden_release_url -o $garden_release_filename
+      aria2c -x 16 -s 16 -o $garden_release_filename $garden_release_url
     else
       echo "Garden release version $garden_release_version already exists"
     fi
@@ -87,7 +87,7 @@ function recreate_bosh_lite() {
 
     if [ ! -f $etcd_release_filename ]; then
       echo "Downloading etcd release version $etcd_release_version"
-      curl -L $etcd_release_url -o $etcd_release_filename
+      aria2c -x 16 -s 16 -o $etcd_release_filename $etcd_release_url
     else
       echo "Etcd release version $etcd_release_version already exists"
     fi

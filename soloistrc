@@ -172,6 +172,7 @@ node_attributes:
   homebrew:
     formulas:
       - ack
+      - aria2
       - awscli
       - bosh-init
       - cf-cli
