@@ -59,9 +59,9 @@ node_attributes:
         - initials: es
           name: Eric Saxby
           username: esaxby
-        - initials: jp
-          name: Jeff Pak
-          email: jeffrey.pak@emc.com
+        - initials: ad
+          name: Amelia Downs
+          username: adowns
         - initials: kf
           name: Kara Felix
           email: kfelix@us.ibm.com
