@@ -4,18 +4,6 @@
   create-org test
   create-space -o test test
   target -o test -s test
-  create-user space_developer password
-  set-space-role space_developer test test SpaceDeveloper
-  create-user space_manager password
-  set-space-role space_manager test test SpaceManager
-  create-user space_auditor password
-  set-space-role space_auditor test test SpaceAuditor
-  create-user billing_manager password
-  set-org-role billing_manager test BillingManager
-  create-user org_manager password
-  set-org-role org_manager test OrgManager
-  create-user org_auditor password
-  set-org-role org_auditor test OrgAuditor
 
 --relite
   api api.bosh-lite.com --skip-ssl-validation
@@ -24,6 +12,8 @@
   create-org test
   create-space -o test test
   target -o test -s test
+
+--users
   create-user space_developer password
   set-space-role space_developer test test SpaceDeveloper
   create-user space_manager password
