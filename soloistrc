@@ -170,6 +170,10 @@ node_attributes:
         - bash_it/custom/capi-env.bash
         - bash_it/custom/always_duet.bash
         - bash_it/custom/recreate_bosh_lite.bash
+  atom:
+    packages:
+      - go-plus
+      - gorename
   homebrew:
     formulas:
       - ack
