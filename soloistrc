@@ -98,7 +98,8 @@ node_attributes:
             - git checkout develop
             - ./scripts/update
         - url: https://github.com/cloudfoundry/docs-services
-        - url: https://github.com/cloudfoundry-incubator/sprout-capi
+        - url: https://github.com/cloudfoundry/sprout-capi
+        - url: https://github.com/cloudfoundry/capi-dockerfiles
     terminal:
       default_profile: 'Pro'
     settings:
