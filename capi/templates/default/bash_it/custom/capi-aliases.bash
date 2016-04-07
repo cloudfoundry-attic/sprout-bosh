@@ -7,6 +7,8 @@ alias qnd-deploy='(cd ~/workspace/cf-release && bosh --parallel 10 sync blobs &&
 alias qnd-deploy-diego='(cd ~/workspace/diego-release && bosh --parallel 10 sync blobs && scripts/update && scripts/deploy && bosh deployment ~/workspace/cf-release/bosh-lite/deployments/cf.yml)'
 alias qnd-deploy-manifest='(cd ~/workspace/cf-release && scripts/generate-bosh-lite-dev-manifest && qnd-deploy)'
 
+alias psql-bosh-lite='psql -h 10.244.0.30 -p 5524 -U ccadmin ccdb'
+
 #FASD
 alias v='fasd -e vim'
 
