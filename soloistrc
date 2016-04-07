@@ -88,7 +88,9 @@ node_attributes:
         - url: https://github.com/cloudfoundry-incubator/api-docs
           name: v3-docs
         - url: https://github.com/cloudfoundry/bosh-lite
+          update: true
         - url: https://github.com/pivotal-cf-experimental/canibump
+          update: true
         - url: https://github.com/cloudfoundry/cf-release
           branch: develop
           post_clone_commands:
@@ -100,6 +102,7 @@ node_attributes:
         - url: https://github.com/cloudfoundry/docs-services
         - url: https://github.com/cloudfoundry/sprout-capi
         - url: https://github.com/cloudfoundry/capi-dockerfiles
+          update: true
         - url: https://github.com/cloudfoundry/capi-checkman
           update: true
     terminal:
