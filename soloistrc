@@ -90,16 +90,18 @@ node_attributes:
         - url: https://github.com/cloudfoundry/bosh-lite
         - url: https://github.com/pivotal-cf-experimental/canibump
         - url: https://github.com/cloudfoundry/cf-release
+          branch: develop
           post_clone_commands:
-            - git checkout develop
             - ./scripts/update
         - url: https://github.com/cloudfoundry-incubator/diego-release
+          branch: develop
           post_clone_commands:
-            - git checkout develop
             - ./scripts/update
         - url: https://github.com/cloudfoundry/docs-services
         - url: https://github.com/cloudfoundry/sprout-capi
         - url: https://github.com/cloudfoundry/capi-dockerfiles
+        - url: https://github.com/cloudfoundry/capi-checkman
+          update: true
     terminal:
       default_profile: 'Pro'
     settings:
