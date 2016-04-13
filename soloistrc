@@ -18,8 +18,6 @@ recipes:
 - sprout-ssh::known_hosts_github
 
 - sprout-chruby
-- capi::fast_bosh
-- capi::pullify
 - capi::cf_cli
 
 # development (general)
@@ -175,6 +173,9 @@ node_attributes:
         - bash_it/custom/capi-env.bash
         - bash_it/custom/always_duet.bash
         - bash_it/custom/recreate_bosh_lite.bash
+        - bash_it/custom/setup-direnv.bash
+        - bash_it/custom/fast_bosh.bash
+        - bash_it/custom/pullify.bash
   atom:
     packages:
       - go-plus
