@@ -47,6 +47,15 @@ then try downgrading those errors like this:
 
     caffeinate bundle exec soloist
 
+### 5. Optionally run other commands to set up workstation
+
+There are a number of functions and aliases that are installed into a workstation by sprout. After it succeeds,
+one may want to run the following commands:
+
+```
+recreate_bosh_lite
+```
+
 ## Caveats
 
 ### Homebrew
