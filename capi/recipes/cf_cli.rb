@@ -1,5 +1,15 @@
 replay_plugin_config_path = "#{node['sprout']['home']}/.cf/plugins/CmdSetRecords"
 
+[
+  ::File.join(node['sprout']['home'], '.cf'),
+  ::File.join(node['sprout']['home'], '.cf', 'plugins')
+].each do |directory|
+  directory directory do
+    owner node['sprout']['user']
+    recursive true
+  end
+end
+
 cookbook_file replay_plugin_config_path do
   source "cf_cli/CmdSetRecords"
   user node['sprout']['user']
