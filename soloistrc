@@ -83,8 +83,6 @@ node_attributes:
           username: rreza
       projects:
         - url: https://github.com/cloudfoundry/api-docs
-        - url: https://github.com/cloudfoundry-incubator/api-docs
-          name: v3-docs
         - url: https://github.com/cloudfoundry/bosh-lite
           update: true
         - url: https://github.com/pivotal-cf-experimental/canibump
