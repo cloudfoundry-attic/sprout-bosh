@@ -93,6 +93,7 @@ node_attributes:
           branch: develop
           post_clone_commands:
             - ./scripts/update
+            - ./scripts/setup-git-hooks
         - url: https://github.com/cloudfoundry-incubator/diego-release
           branch: develop
           post_clone_commands:
