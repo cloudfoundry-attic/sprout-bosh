@@ -104,6 +104,8 @@ node_attributes:
           update: true
         - url: https://github.com/cloudfoundry/capi-checkman
           update: true
+        - url: https://github.com/cloudfoundry/capi-ci
+          update: true
     terminal:
       default_profile: 'Pro'
     settings:
