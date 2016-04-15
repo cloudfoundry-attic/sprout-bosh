@@ -12,6 +12,7 @@ alias psql-bosh-lite='psql -h 10.244.0.30 -p 5524 -U ccadmin ccdb'
 #FASD
 alias v='fasd -e vim'
 
+alias b='bundle exec'
 alias bake='bundle exec rake'
 
 # Git aliases
