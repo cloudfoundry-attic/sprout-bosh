@@ -1,3 +1,24 @@
+function bosh_lite_install_release() {
+  declare name="$1" release="$2" release_data release_version release_url release_filename
+
+  local cache_directory="${HOME}/Downloads"
+
+  release_data=$(curl --retry 5 -s -L "https://bosh.io/api/v1/releases/github.com/${release}")
+  release_version=$(jq '.[0].version' --raw-output <<< "${release_data}")
+  release_url=$(jq '.[0].url' --raw-output <<< "${release_data}")
+  release_filename="${name}-release-${release_version}.tgz"
+
+  if [ ! -f "$cache_directory/$release_filename" ]; then
+    echo "Downloading ${name} release version ${release_version}"
+    aria2c -x 16 -s 16 -d "${cache_directory}" -o "${release_filename}" "${release_url}"
+  else
+    echo "${name} release version ${release_version} already exists"
+  fi
+
+  echo "Uploading ${name}"
+  bosh -t lite upload release "${cache_directory}/${release_filename}"
+}
+
 function recreate_bosh_lite() {
   (
     cache_directory="$HOME/Downloads"
@@ -66,35 +87,9 @@ function recreate_bosh_lite() {
     bosh -t lite upload release
     bosh -t lite -n deploy
 
-    garden_release_data=`curl --retry 5 -s -L https://bosh.io/api/v1/releases/github.com/cloudfoundry-incubator/garden-linux-release`
-    garden_release_version=`jq '.[0].version' --raw-output <<< $garden_release_data`
-    garden_release_url=`jq '.[0].url' --raw-output <<< $garden_release_data`
-    garden_release_filename="garden-linux-release-$garden_release_version.tgz"
-
-    if [ ! -f "$cache_directory/$garden_release_filename" ]; then
-      echo "Downloading garden release version $garden_release_version"
-      aria2c -x 16 -s 16 -d $cache_directory -o $garden_release_filename $garden_release_url
-    else
-      echo "Garden release version $garden_release_version already exists"
-    fi
-
-    echo "Uploading Garden Linux"
-    bosh -t lite upload release "$cache_directory/$garden_release_filename"
-
-    etcd_release_data=`curl --retry 5 -s -L https://bosh.io/api/v1/releases/github.com/cloudfoundry-incubator/etcd-release`
-    etcd_release_version=`jq '.[0].version' --raw-output <<< $etcd_release_data`
-    etcd_release_url=`jq '.[0].url' --raw-output <<< $etcd_release_data`
-    etcd_release_filename="etcd-release-$etcd_release_version.tgz"
-
-    if [ ! -f "$cache_directory/$etcd_release_filename" ]; then
-      echo "Downloading etcd release version $etcd_release_version"
-      aria2c -x 16 -s 16 -d $cache_directory -o $etcd_release_filename $etcd_release_url
-    else
-      echo "Etcd release version $etcd_release_version already exists"
-    fi
-
-    echo "Uploading etcd-release"
-    bosh -t lite upload release "$cache_directory/$etcd_release_filename"
+    bosh_lite_install_release "garden-linux" "cloudfoundry-incubator/garden-linux-release"
+    bosh_lite_install_release "etcd" "cloudfoundry-incubator/etcd-release"
+    bosh_lite_install_release "cflinuxfs2-rootfs" "cloudfoundry/cflinuxfs2-rootfs-release"
 
     cd ~/workspace/diego-release
 
