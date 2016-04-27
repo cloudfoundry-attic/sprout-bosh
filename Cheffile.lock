@@ -9,7 +9,7 @@ SITE
       build-essential (>= 2.1.2)
     seven_zip (2.0.0)
       windows (>= 1.2.2)
-    windows (1.39.2)
+    windows (1.40.0)
       chef_handler (>= 0.0.0)
 
 GIT
@@ -30,7 +30,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-chruby
   ref: master
-  sha: d6065dea3e4baaf7f133b9839b5c2043d1cb4191
+  sha: d3bf3aa75b37893808fedd706c2e3048a4da341c
   specs:
     sprout-chruby (0.1.0)
       homebrew (>= 0.0.0)
