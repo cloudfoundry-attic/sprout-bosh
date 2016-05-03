@@ -1,27 +1,53 @@
-function bosh_lite_install_release() {
-  declare name="$1" release="$2" release_data release_version release_url release_filename
+function bosh_lite_cache_directory() {
+  echo "${HOME}/.bosh-lite/cache"
+}
 
-  local cache_directory="${HOME}/Downloads"
+function bosh_lite_install_resource() {
+  declare resource_type="$1" name="$2" source_url="$3" cache_dir="$4" url_matcher="$5" data version url filename
 
-  release_data=$(curl --retry 5 -s -L "https://bosh.io/api/v1/releases/github.com/${release}")
-  release_version=$(jq '.[0].version' --raw-output <<< "${release_data}")
-  release_url=$(jq '.[0].url' --raw-output <<< "${release_data}")
-  release_filename="${name}-release-${release_version}.tgz"
+  DEFAULT_URL_MATCHER='.[0].url'
+  url_matcher=${url_matcher:-$DEFAULT_URL_MATCHER}
 
-  if [ ! -f "$cache_directory/$release_filename" ]; then
-    echo "Downloading ${name} release version ${release_version}"
-    aria2c -x 16 -s 16 -d "${cache_directory}" -o "${release_filename}" "${release_url}"
+  data=$(curl --retry 5 -s -L "${source_url}")
+  version=$(jq '.[0].version' --raw-output <<< "${data}")
+  url=$(jq ${url_matcher} --raw-output <<< "${data}")
+  filename="${name}-${version}.tgz"
+
+  if [ ! -f "${cache_dir}/${filename}" ]; then
+    echo "Downloading ${name} ${resource_type} version ${version}"
+    aria2c -x 16 -s 16 -d "${cache_dir}" -o "${filename}" "${url}"
   else
-    echo "${name} release version ${release_version} already exists"
+    echo "${resource_type} ${name} version ${version} already exists"
   fi
 
-  echo "Uploading ${name}"
-  bosh -t lite upload release "${cache_directory}/${release_filename}"
+  echo "Uploading ${resource_type} ${name}"
+  bosh -t lite upload "${resource_type}" "${cache_dir}/${filename}"
+}
+
+function bosh_lite_install_release() {
+  declare name="$1" release="$2"
+  local release_cache_directory="$(bosh_lite_cache_directory)/releases"
+
+  bosh_lite_install_resource "release" "${name}" "https://bosh.io/api/v1/releases/github.com/${release}" "${release_cache_directory}"
+}
+
+function bosh_lite_install_stemcell() {
+  declare name="$1"
+  local stemcell_cache_directory="$(bosh_lite_cache_directory)/stemcells"
+
+  bosh_lite_install_resource "stemcell" "${name}" "https://bosh.io/api/v1/stemcells/${name}" "${stemcell_cache_directory}" '.[0].regular.url'
+}
+
+function initialize_bosh_lite_directories() {
+  local cache_dir=$(bosh_lite_cache_directory)
+  mkdir -p "${cache_dir}/stemcells"
+  mkdir -p "${cache_dir}/releases"
 }
 
 function recreate_bosh_lite() {
   (
-    cache_directory="$HOME/Downloads"
+    initialize_bosh_lite_directories
+
     set -e
     sudo true
 
@@ -36,7 +62,6 @@ function recreate_bosh_lite() {
     echo -e "\nDestroying current Bosh-Lite"
     vagrant destroy --force
 
-    #pull in changes for bosh-lite
     git pull
 
     #update vagrant box
@@ -52,20 +77,7 @@ function recreate_bosh_lite() {
 
     bosh target lite
 
-    stemcell_data=`curl --retry 5 -s -L https://bosh.io/api/v1/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent`
-    stemcell_version=`jq '.[0].version' --raw-output <<< $stemcell_data`
-    stemcell_url=`jq '.[0].regular.url' --raw-output <<< $stemcell_data`
-    stemcell_filename="bosh-stemcell-$stemcell_version-warden-boshlite-ubuntu-trusty-go_agent.tgz"
-
-    if [ ! -f "$cache_directory/$stemcell_filename" ]; then
-      echo "Downloading stemcell version $stemcell_version"
-      aria2c -x 16 -s 16 -d $cache_directory -o $stemcell_filename $stemcell_url
-    else
-      echo "Stemcell version $stemcell_version already exists"
-    fi
-
-    echo "Uploading Stemcell"
-    bosh -t lite upload stemcell "$cache_directory/$stemcell_filename"
+    bosh_lite_install_stemcell "bosh-warden-boshlite-ubuntu-trusty-go_agent"
 
     if $update; then
       echo "Updating Diego-Release"
