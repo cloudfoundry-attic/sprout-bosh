@@ -1,4 +1,6 @@
-package 'vim'
+package 'vim' do
+  options '--with-lua'
+end
 homebrew_cask 'macvim'
 
 vimfiles = ::File.join(node['sprout']['home'], node['workspace_directory'], 'vimfiles')
