@@ -41,6 +41,7 @@ recipes:
 - sprout-osx-apps::go
 
 - capi
+- capi::sync
 
 node_attributes:
   sprout:
@@ -226,6 +227,7 @@ node_attributes:
       - virtualbox
       - atom
       - xscope
+      - bittorrent-sync
     taps:
       - cloudfoundry/tap
       - universal-ctags/universal-ctags
