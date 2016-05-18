@@ -15,7 +15,7 @@ template "#{node['sprout']['home']}/.btsync.conf" do
 end
 
 execute 'load bittorrent sync config' do
-  command "/opt/homebrew-cask/Caskroom/bittorrent-sync/latest/BitTorrent\ Sync.app/Contents/MacOS/BitTorrent\ Sync --config #{node['sprout']['home']}/.btsync.conf &"
+  command "'/opt/homebrew-cask/Caskroom/bittorrent-sync/latest/BitTorrent Sync.app/Contents/MacOS/BitTorrent Sync' --config #{node['sprout']['home']}/.btsync.conf &"
   user node['sprout']['user']
   only_if { ::File.exist?(sync_config) }
 end
