@@ -188,7 +188,16 @@ node_attributes:
     allowed:
       - '0\.[A-Z0-9]{20}'
     install_dirs:
+      - workspace/capi-checkman
+      - workspace/capi-ci
+      - workspace/capi-dockerfiles
+      - workspace/cf-release/src/capi-release
       - workspace/cf-release/src/capi-release/src/cloud_controller_ng
+      - workspace/cf-release/src/github.com/cloudfoundry/cf-acceptance-tests
+      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/cc-uploader
+      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/nsync
+      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/stager
+      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/tps
   homebrew:
     formulas:
       - ack
