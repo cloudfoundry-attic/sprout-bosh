@@ -25,11 +25,13 @@ node['git_hooks']['allowed'].each do |pattern|
   execute "allow git secret: #{pattern}" do
     command "git secrets --add --allowed '#{pattern}'"
     user node['sprout']['user']
+    cwd ::File.join(node['sprout']['home'], node['git_hooks']['install_dirs'].first)
     not_if "git config -l | grep -F '#{pattern}'"
   end
 end
 
 %w(
+  /usr/local/share/githooks
   /usr/local/share/githooks/pre-commit
   /usr/local/share/githooks/commit-msg
   /usr/local/share/githooks/prepare-commit-msg
