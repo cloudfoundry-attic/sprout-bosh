@@ -53,21 +53,12 @@ node_attributes:
       global_config:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
       authors:
-        - initials: dw
-          name: Dan Wendorf
-          username: dwendorf
         - initials: es
           name: Eric Saxby
           username: esaxby
         - initials: ad
           name: Amelia Downs
           username: adowns
-        - initials: ka
-          name: Kara Alexandra
-          email: kalexandra@us.ibm.com
-        - initials: pg
-          name: Peter Goetz
-          email: peter.gtz@gmail.com
         - initials: ur
           name: Urvashi Reddy
           username: ureddy
@@ -83,6 +74,9 @@ node_attributes:
         - initials: rr
           name: Rizwan Reza
           username: rreza
+        - initials: th
+          name: Tim Hausler
+          username: thausler
       projects:
         - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
