@@ -12,6 +12,9 @@ alias qnd-deploy-manifest='(cd ~/workspace/cf-release && scripts/deploy)'
 # PSQL
 alias psql-bosh-lite='psql -h 10.244.0.30 -p 5524 -U ccadmin ccdb'
 
+# XENA
+alias bosh-ssh-xena='(bosh target xena && bosh download manifest cf-xena /tmp/xena.yml && bosh deployment /tmp/xena.yml && bosh ssh --gateway_user vcap --gateway_host bosh.xena.cf-app.com --gateway_identity_file ~/workspace/capi-ci-private/xena/keypair/bosh.pem)' 
+
 #FASD
 alias v='fasd -e vim'
 
