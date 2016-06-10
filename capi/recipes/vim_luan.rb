@@ -19,7 +19,7 @@ link dotvim do
   owner node['sprout']['user']
 end
 
-execute './update --non-interactive' do
+execute 'yes "" | ./update --non-interactive' do
   cwd dotvim
   user node['sprout']['user']
 end
