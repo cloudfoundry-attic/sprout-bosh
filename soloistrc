@@ -52,6 +52,7 @@ node_attributes:
         - ci duet-commit
       global_config:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
+        'submodule.fetchJobs': 16
       authors:
         - initials: es
           name: Eric Saxby
