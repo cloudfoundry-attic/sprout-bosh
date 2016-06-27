@@ -18,7 +18,6 @@ recipes:
 - sprout-ssh::known_hosts_github
 
 - sprout-chruby
-- capi::cf_cli
 
 # development (general)
 - sprout-base::workspace_directory
@@ -33,16 +32,11 @@ recipes:
 - sprout-postgresql
 
 # apps (editors)
-- sprout-osx-apps::textmate_preferences
 - sprout-jetbrains-editors::rubymine
 
 # runtime-specific
 - sprout-osx-settings::ntp
 - sprout-osx-apps::go
-
-- capi
-- capi::sync
-- capi::git_hooks
 
 node_attributes:
   sprout:
@@ -54,52 +48,17 @@ node_attributes:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
         'submodule.fetchJobs': 16
       authors:
-        - initials: es
-          name: Eric Saxby
-          username: esaxby
-        - initials: ad
-          name: Amelia Downs
-          username: adowns
-        - initials: ur
-          name: Urvashi Reddy
-          username: ureddy
-        - initials: uu
-          name: Utako Ueda
-          username: uueda
-        - initials: zr
-          name: Zach Robinson
-          username: zrobinson
-        - initials: sl
-          name: Simon Leung
-          email: leungs@us.ibm.com
-        - initials: rr
-          name: Rizwan Reza
-          username: rreza
-        - initials: th
-          name: Tim Hausler
-          username: thausler
+        - initials: fs
+          name: Forrest Sill
+          username: fsill
+        - initials: lf
+          name: Lyle Franklin
+          username: lfranklin
+        - initials: bmc
+          name: Brian Cunnie
+          username: bcunnie
       projects:
-        - url: https://github.com/cloudfoundry/api-docs
         - url: https://github.com/cloudfoundry/bosh-lite
-          update: true
-        - url: https://github.com/pivotal-cf-experimental/canibump
-          update: true
-        - url: https://github.com/cloudfoundry/cf-release
-          branch: develop
-          post_clone_commands:
-            - ./scripts/update
-            - ./scripts/setup-git-hooks
-        - url: https://github.com/cloudfoundry-incubator/diego-release
-          branch: develop
-          post_clone_commands:
-            - ./scripts/update
-        - url: https://github.com/cloudfoundry/docs-services
-        - url: https://github.com/cloudfoundry/sprout-capi
-        - url: https://github.com/cloudfoundry/capi-dockerfiles
-          update: true
-        - url: https://github.com/cloudfoundry/capi-checkman
-          update: true
-        - url: https://github.com/cloudfoundry/capi-ci
           update: true
     terminal:
       default_profile: 'Pro'
@@ -112,39 +71,16 @@ node_attributes:
       tile_size: 35
       magnification: false
     chruby:
-      default_ruby: '2.3'
+      default_ruby: '2.3.1'
       rubies:
         ruby:
+          - '2.2.5'
           - '2.3.1'
 
   bosh:
     directors:
       - name: lite
         url: https://192.168.50.4
-      - name: tabasco
-        url: https://bosh.tabasco.cf-app.com
-      - name: a1
-        url: https://bosh.a1.cf-app.com
-      - name: runtime1
-        url: https://micro.runtime1.cf-app.com
-      - name: runtime2
-        url: https://micro.runtime2.cf-app.com
-      - name: runtime-bb-2
-        url: https://bosh.runtime-bb-2.cf-app.com
-      - name: runtime-bb-1
-        url: https://bosh.runtime-bb-1.cf-app.com
-      - name: cat
-        url: https://bosh.cat.wild.cf-app.com
-      - name: mouse
-        url: https://bosh.mouse.wild.cf-app.com
-      - name: runtime-ci
-        url: https://bosh.runtime.ci.cf-app.com
-      - name: minimal
-        url: https://54.165.111.247
-      - name: wasabi
-        url: https://bosh.wasabi.cf-app.com
-      - name: xena
-        url: https://bosh.xena.cf-app.com
 
   versions:
     bash_it: HEAD
@@ -166,8 +102,6 @@ node_attributes:
         - fasd
     custom_plugins:
       capi:
-        - bash_it/custom/capi-aliases.bash
-        - bash_it/custom/capi-env.bash
         - bash_it/custom/always_duet.bash
         - bash_it/custom/recreate_bosh_lite.bash
         - bash_it/custom/setup-direnv.bash
@@ -179,37 +113,20 @@ node_attributes:
     packages:
       - go-plus
       - gorename
-  git_hooks:
-    allowed:
-      - '0\.[A-Z0-9]{20}'
-    install_dirs:
-      - workspace/capi-checkman
-      - workspace/capi-ci
-      - workspace/capi-dockerfiles
-      - workspace/cf-release/src/capi-release
-      - workspace/cf-release/src/capi-release/src/cloud_controller_ng
-      - workspace/cf-release/src/github.com/cloudfoundry/cf-acceptance-tests
-      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/cc-uploader
-      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/nsync
-      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/stager
-      - workspace/cf-release/src/capi-release/src/github.com/cloudfoundry-incubator/tps
   homebrew:
     formulas:
       - ack
-      - aria2
       - awscli
-      - bosh-init
-      - cf-cli
       - direnv
-      - dishy
-      - fasd
       - name: fzf
         head: true
+      - fasd
       - git-secrets
       - jq
+      - lastpass-cli
+      - libxml2
       - node
       - pstree
-      - qt
       - s3cmd
       - ssh-copy-id
       - tig
@@ -218,6 +135,7 @@ node_attributes:
       - tree
       - name: universal-ctags
         head: true
+      - vim
       - watch
       - wget
     casks:
@@ -225,24 +143,14 @@ node_attributes:
       - rowanj-gitx
       - github-desktop
       - google-chrome
-      - itsycal
-      - karabiner
-      - macvim
-      - menumeters
-      - mou
-      - sequel-pro
       - screenhero
       - slack
       - sourcetree
       - vagrant
       - virtualbox
       - atom
-      - xscope
-      - bittorrent-sync
     taps:
-      - cloudfoundry/tap
       - universal-ctags/universal-ctags
-      - businesscritical/tap
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2
     initial_repeat_delay_lower_is_shorter: 15
