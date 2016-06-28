@@ -2,20 +2,23 @@
 
 site 'https://supermarket.getchef.com/api/v1'
 
+cookbook 'sprout-base',
+  :github => 'pivotal-sprout/sprout-base'
+
+cookbook 'capi',
+   :github => 'cloudfoundry/sprout-capi'
+
 cookbook 'sprout-chruby',
   :github => 'pivotal-sprout/sprout-chruby'
-
-cookbook 'sprout-ruby',
-  :github => 'pivotal-sprout/sprout-ruby'
-
-cookbook 'sprout-mysql',
-  :github => 'pivotal-sprout/sprout-mysql'
 
 cookbook 'sprout-git',
   :github => 'pivotal-sprout/sprout-git'
 
-cookbook 'sprout-base',
-  :github => 'pivotal-sprout/sprout-base'
+cookbook 'sprout-jetbrains-editors',
+  :github => 'pivotal-sprout/sprout-jetbrains-editors'
+
+cookbook 'sprout-mysql',
+  :github => 'pivotal-sprout/sprout-mysql'
 
 cookbook 'sprout-osx-apps',
   :github => 'pivotal-sprout/sprout-osx-apps'
@@ -29,13 +32,13 @@ cookbook 'osx',
 cookbook 'sprout-postgresql',
   :github => 'pivotal-sprout/sprout-postgresql'
 
+cookbook 'sprout-ruby',
+  :github => 'pivotal-sprout/sprout-ruby'
+
 cookbook 'sprout-ssh',
   :github => 'pivotal-sprout/sprout-ssh'
 
-cookbook 'sprout-jetbrains-editors',
-  :github => 'pivotal-sprout/sprout-jetbrains-editors'
+cookbook 'sprout-vim',
+   :github => 'pivotal-sprout/sprout-vim'
 
 cookbook 'homebrew'
-
-cookbook 'capi',
-   :github => 'cloudfoundry/sprout-capi'

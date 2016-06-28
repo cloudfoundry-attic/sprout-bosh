@@ -24,6 +24,7 @@ recipes:
 - sprout-git
 - sprout-git::default_editor
 - sprout-git::git_duet
+- sprout-git::global_config
 - sprout-git::projects
 
 # development (rails)
@@ -33,6 +34,7 @@ recipes:
 
 # apps (editors)
 - sprout-jetbrains-editors::rubymine
+- sprout-vim
 
 # runtime-specific
 - sprout-osx-settings::ntp
@@ -43,7 +45,7 @@ node_attributes:
     git:
       domain: pivotal.io
       aliases:
-        - ci duet-commit
+        - 'ci "duet-commit -v"'
       global_config:
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
         'submodule.fetchJobs': 16
@@ -71,11 +73,25 @@ node_attributes:
       tile_size: 35
       magnification: false
     chruby:
+      auto_change_ruby: true
       default_ruby: '2.3.1'
       rubies:
         ruby:
           - '2.2.5'
           - '2.3.1'
+    vagrant:
+      plugins:
+        - name: vagrant-aws
+        - name: vagrant-berkshelf
+        - name: vagrant-omnibus
+        - name: vagrant-vmware-fusion
+
+    postgresql:
+      max_connections: 256
+
+    iterm2:
+      color:
+        default: arthur
 
   bosh:
     directors:
@@ -135,20 +151,22 @@ node_attributes:
       - tree
       - name: universal-ctags
         head: true
-      - vim
+
       - watch
       - wget
     casks:
+      - atom
       - flycut
-      - rowanj-gitx
       - github-desktop
       - google-chrome
+      - rowanj-gitx
+      - rubymine
       - screenhero
       - slack
       - sourcetree
+      - sublime-text
       - vagrant
       - virtualbox
-      - atom
     taps:
       - universal-ctags/universal-ctags
   keyboard_preferences:
