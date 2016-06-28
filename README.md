@@ -1,7 +1,5 @@
 # sprout-wrap
 
-[![Build Status](https://travis-ci.org/cloudfoundry/sprout-capi.png?branch=master)](https://travis-ci.org/cloudfoundry/sprout-capi)
-
 This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
 to run a subset of the recipes in sprout's cookbooks.
 
@@ -23,12 +21,12 @@ If you receive a message about the update server being unavailable and are on Ma
 
 ### 2. Clone this project
 
-    git clone https://github.com/cloudfoundry/sprout-capi.git
-    cd sprout-capi
+    git clone https://github.com/cloudfoundry/sprout-bosh.git
+    cd sprout-bosh
 
 ### 3. Install soloist & and other required gems
 
-If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
+If you're running under rvm, rbenv, or chruby, you shouldn't preface the following commands with `sudo`.
 
     sudo gem install bundler
     bundle
@@ -49,32 +47,12 @@ then try downgrading those errors like this:
 
 ### 5. Optionally run other commands to set up workstation
 
-There are a number of functions and aliases that are installed into a workstation by sprout. After it succeeds,
-one may want to run the following commands:
-
-```
-recreate_bosh_lite
-```
-
-## Caveats
-
-### Homebrew
-
-- Homebrew cask has been [integrated](https://github.com/caskroom/homebrew-cask/pull/15381) with Homebrew proper. If you are experiencing problems installing casks and
-  have an older installation of Homebrew, running `brew uninstall --force brew-cask; brew update` should fix things.
-- If you are updating from an older version of sprout-wrap, your homebrew configuration in soloistrc might be under `node_attributes.sprout.homebrew.formulae`
-  and `node_attributes.sprout.homebrew.casks`. These will need to be updated to `node_attributes.homebrew.formulas` (note the change from formulae to formulas)
-  and `node_attributes.homebrew.casks`.
-
-## Roadmap
-
-See Pivotal Tracker: https://www.pivotaltracker.com/s/projects/884116
-
-## Discussion List
-
-  Join [sprout-users@googlegroups.com](https://groups.google.com/forum/#!forum/sprout-users) if you use Sprout.
-
-## References
-
-* Slides from @hiremaga's [lightning talk on Sprout](http://sprout-talk.cfapps.io/) at Pivotal Labs in June 2013
-* [Railscast on chef-solo](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates (PAID)
+- copy *Spectacle* and *Flycut* to start on login
+- run git-hooks & git secrets
+  ```
+  git clone git@github.com:pivotal-sprout/sprout-git.git ~/workspace/sprout-git
+  cd !$
+  bundle
+  bundle exec soloist run_recipe sprout-git::sprout_hooks
+  bundle exec soloist run_recipe sprout-git::sprout_secrets
+  ```
