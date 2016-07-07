@@ -89,7 +89,7 @@ bundle
 # IF error  "require': incompatible library version"
 gem pristine --all
 # ENDIF incompatible library
-# IF pg gem doesn't install, reboot and try again. Really. It worked for me.
+# IF pg gem doesn't install, open a new terminal and try again. Really. It worked for me.
 ```
 1. Run the unit tests:
 ```
