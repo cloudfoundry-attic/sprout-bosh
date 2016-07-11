@@ -115,6 +115,8 @@ node_attributes:
         - git
         - fzf
         - fasd
+        - chruby-auto
+        - docker-machine
     custom_plugins:
       capi:
         - bash_it/custom/always_duet.bash
