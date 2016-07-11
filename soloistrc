@@ -119,7 +119,6 @@ node_attributes:
         - docker-machine
     custom_plugins:
       capi:
-        - bash_it/custom/always_duet.bash
         - bash_it/custom/recreate_bosh_lite.bash
         - bash_it/custom/setup-direnv.bash
         - bash_it/custom/fast_bosh.bash
