@@ -1,21 +1,25 @@
 SITE
   remote: https://supermarket.getchef.com/api/v1
   specs:
-    build-essential (3.2.0)
+    build-essential (6.0.6)
+      compat_resource (>= 12.14)
+      mingw (>= 1.1)
       seven_zip (>= 0.0.0)
-    chef_handler (1.3.0)
-    dmg (2.3.0)
-    homebrew (2.1.0)
+    compat_resource (12.14.7)
+    dmg (3.0.0)
+    homebrew (2.1.2)
       build-essential (>= 2.1.2)
-    seven_zip (2.0.0)
+    mingw (1.2.4)
+      compat_resource (>= 0.0.0)
+      seven_zip (>= 0.0.0)
+    seven_zip (2.0.2)
       windows (>= 1.2.2)
-    windows (1.40.0)
-      chef_handler (>= 0.0.0)
+    windows (2.0.2)
 
 GIT
   remote: https://github.com/cloudfoundry/sprout-capi
   ref: master
-  sha: 260c02885922dc148501391df6aaa39af277744c
+  sha: e8687955399cb02cdc2aabe1c885fd92d4eaf6d7
   specs:
     capi (0.1.0)
       homebrew (>= 0.0.0)
@@ -33,15 +37,15 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-base
   ref: master
-  sha: 439d174547870e5f61ba27117090944813d5481a
+  sha: fe8719337275808d2a6a33b2d60561f36c2272a5
   specs:
-    sprout-base (0.3.0)
+    sprout-base (0.5.0)
       homebrew (>= 0.0.0)
 
 GIT
   remote: https://github.com/pivotal-sprout/sprout-chruby
   ref: master
-  sha: d3bf3aa75b37893808fedd706c2e3048a4da341c
+  sha: 0543912b5b654eb512a9ee24cc506a3991f07d58
   specs:
     sprout-chruby (0.1.0)
       homebrew (>= 0.0.0)
@@ -50,16 +54,16 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-git
   ref: master
-  sha: 8c41f90c49662ae5ec14e73f18238760ccba0fbf
+  sha: 90c32ad3e7b0d549716fd298475e8e0621dbc35c
   specs:
-    sprout-git (0.2.0)
+    sprout-git (0.3.1)
       homebrew (>= 0.0.0)
       sprout-base (>= 0.0.0)
 
 GIT
   remote: https://github.com/pivotal-sprout/sprout-jetbrains-editors
   ref: master
-  sha: 342225624e5c64adde7457bee502b8dbace51c3d
+  sha: bcfcb62c1095a9ef33477f896ebda47918ad7618
   specs:
     sprout-jetbrains-editors (0.1.0)
       homebrew (>= 0.0.0)
@@ -77,9 +81,9 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-osx-apps
   ref: master
-  sha: c86e31c859db6101a6e9e8af46041203b8db14f0
+  sha: 38899c86b2e841deb60fe5f9d3f294e73549f204
   specs:
-    sprout-osx-apps (0.1.0)
+    sprout-osx-apps (0.2.0)
       dmg (>= 0.0.0)
       homebrew (>= 1.6.6)
       sprout-base (>= 0.0.0)
@@ -88,7 +92,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-osx-settings
   ref: master
-  sha: d6e5123dba44c9c5435022821a46ae75faffe979
+  sha: 62630bea50cea7b24058854a5a216c3a4dbbe4ef
   specs:
     sprout-osx-settings (0.1.0)
       homebrew (>= 0.0.0)
@@ -98,7 +102,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-postgresql
   ref: master
-  sha: c4a18831e938272db29137bbbc7b4a5f9a8efca1
+  sha: 97558d741bc7f0e1ea6c2f896dd2a3706b26c7ec
   specs:
     sprout-postgresql (0.1.0)
       homebrew (>= 1.5.4)
@@ -107,7 +111,7 @@ GIT
 GIT
   remote: https://github.com/pivotal-sprout/sprout-ruby
   ref: master
-  sha: e10f1a26dbee55cd6349bab638afe74b5a05e3a1
+  sha: 2fc7d5273fccd978321450b61088bbd608867dfc
   specs:
     sprout-ruby (0.1.0)
       sprout-base (>= 0.0.0)

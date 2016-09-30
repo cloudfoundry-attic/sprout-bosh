@@ -44,6 +44,8 @@ recipes:
 node_attributes:
   sprout:
     git:
+      hooks:
+        repository: 'git@github.com:pivotal-cf-experimental/git-hooks-core.git'
       domain: pivotal.io
       global_config:
         'alias.ci': '"duet-commit --verbose"'
