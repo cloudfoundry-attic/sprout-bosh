@@ -26,6 +26,7 @@ recipes:
 - sprout-git::git_duet
 - sprout-git::global_config
 - sprout-git::projects
+- sprout-git::git_hooks_core
 
 # development (rails)
 - sprout-ruby
