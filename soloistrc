@@ -8,10 +8,6 @@ recipes:
 - homebrew::install_formulas
 - homebrew::install_casks
 
-# apps
-- capi::iterm2
-- capi::spectacle
-
 # settings
 - sprout-osx-settings
 - sprout-osx-settings::dock_preferences
@@ -33,10 +29,6 @@ recipes:
 - sprout-mysql
 - sprout-postgresql
 
-# apps (editors)
-- sprout-jetbrains-editors::rubymine
-- sprout-vim
-
 # runtime-specific
 - sprout-osx-settings::ntp
 - sprout-osx-apps::go
@@ -50,7 +42,7 @@ node_attributes:
       global_config:
         'alias.ci': '"duet-commit --verbose"'
         'url."git@github.com:".pushInsteadOf': 'https://github.com/'
-        'submodule.fetchJobs': 16
+        'submodule.fetchJobs': "16"
       authors:
         - initials: fs
           name: Forrest Sill
@@ -119,7 +111,6 @@ node_attributes:
         - fzf
         - fasd
         - chruby-auto
-        - docker-machine
     custom_plugins:
       capi:
         - bash_it/custom/recreate_bosh_lite.bash
@@ -157,7 +148,10 @@ node_attributes:
 
       - watch
       - wget
+      - neovim
     casks:
+      - iterm2
+      - spectacle
       - atom
       - flycut
       - github-desktop
@@ -172,6 +166,7 @@ node_attributes:
       - virtualbox
     taps:
       - universal-ctags/universal-ctags
+      - neovim/neovim
   keyboard_preferences:
     key_repeat_rate_lower_is_faster: 2
     initial_repeat_delay_lower_is_shorter: 15
